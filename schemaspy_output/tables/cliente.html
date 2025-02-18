@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cliente - app_bonus.doc</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.doc</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>cliente</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>Información detallada de los clientes, incluyendo datos personales y de contacto</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_cliente">id_cliente</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;doc.cliente_id_cliente_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_comprobantes_compra_fisicos.id_cliente references cliente.id_cliente via fk_cliente_comprobantes_compra_fisicos_cliente"><a href='cliente_comprobantes_compra_fisicos.html'>cliente_comprobantes_compra_fisicos</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_comprobantes_compra_fisicos_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_direccion_envio.id_cliente references cliente.id_cliente via fk_cliente_direccion_envio_cliente"><a href='cliente_direccion_envio.html'>cliente_direccion_envio</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_direccion_envio_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_estado_registro.id_cliente references cliente.id_cliente via fk_cliente_estado_registro_cliente"><a href='cliente_estado_registro.html'>cliente_estado_registro</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_estado_registro_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_ext_direccion.id_cliente references cliente.id_cliente via fk_cliente_ext_direccion_cliente"><a href='cliente_ext_direccion.html'>cliente_ext_direccion</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_ext_direccion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_ext_referido.id_cliente references cliente.id_cliente via fk_cliente_ext_referido_cliente"><a href='cliente_ext_referido.html'>cliente_ext_referido</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_ext_referido_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_ext_verificacion.id_cliente references cliente.id_cliente via fk_cliente_ext_verificacion_cliente"><a href='cliente_ext_verificacion.html'>cliente_ext_verificacion</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_ext_verificacion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_geolocalizacion.id_cliente references cliente.id_cliente via fk_cliente_geolocalizacion_cliente"><a href='cliente_geolocalizacion.html'>cliente_geolocalizacion</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_geolocalizacion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_historial_codigo_virtual.id_cliente references cliente.id_cliente via fk_cliente_historial_codigo_virtual_cliente"><a href='cliente_historial_codigo_virtual.html'>cliente_historial_codigo_virtual</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_historial_codigo_virtual_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_informacion_adicional.id_cliente references cliente.id_cliente via fk_cliente_informacion_adicional_cliente"><a href='cliente_informacion_adicional.html'>cliente_informacion_adicional</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_informacion_adicional_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_notificaciones.id_cliente references cliente.id_cliente via fk_cliente_notificaciones_cliente"><a href='cliente_notificaciones.html'>cliente_notificaciones</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_notificaciones_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_otp_generico.id_cliente references cliente.id_cliente via fk_cliente_otp_generico_cliente"><a href='cliente_otp_generico.html'>cliente_otp_generico</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_otp_generico_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_otp_transferir_puntos.id_cliente references cliente.id_cliente via fk_cliente_otp_transferir_puntos_cliente"><a href='cliente_otp_transferir_puntos.html'>cliente_otp_transferir_puntos</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_otp_transferir_puntos_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_otp_transferir_soles.id_cliente references cliente.id_cliente via fk_cliente_otp_transferir_soles_cliente"><a href='cliente_otp_transferir_soles.html'>cliente_otp_transferir_soles</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_otp_transferir_soles_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_pagos_tapi.id_cliente references cliente.id_cliente via fk_cliente_pagos_tapi_cliente"><a href='cliente_pagos_tapi.html'>cliente_pagos_tapi</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_pagos_tapi_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_prefs_quiz_categoria.id_cliente references cliente.id_cliente via fk_cliente_prefs_quiz_categoria_cliente"><a href='cliente_prefs_quiz_categoria.html'>cliente_prefs_quiz_categoria</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_prefs_quiz_categoria_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_prefs_quiz_preguntas.id_cliente references cliente.id_cliente via fk_cliente_prefs_quiz_preguntas_cliente"><a href='cliente_prefs_quiz_preguntas.html'>cliente_prefs_quiz_preguntas</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_prefs_quiz_preguntas_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_carrito_compra.id_cliente references cliente.id_cliente via fk_cliente_producto_carrito_compra_cliente"><a href='cliente_producto_carrito_compra.html'>cliente_producto_carrito_compra</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_carrito_compra_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_cliente references cliente.id_cliente via fk_cliente_producto_compra_cliente"><a href='cliente_producto_compra.html'>cliente_producto_compra</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_compra_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_favorito.id_cliente references cliente.id_cliente via fk_cliente_producto_favorito_cliente"><a href='cliente_producto_favorito.html'>cliente_producto_favorito</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_favorito_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_orden.id_cliente references cliente.id_cliente via fk_cliente_producto_orden_cliente"><a href='cliente_producto_orden.html'>cliente_producto_orden</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_orden_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_orden_transaccion.id_cliente references cliente.id_cliente via fk_cliente_producto_orden_transaccion_cliente"><a href='cliente_producto_orden_transaccion.html'>cliente_producto_orden_transaccion</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_orden_transaccion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_producto_vista.id_cliente references cliente.id_cliente via fk_cliente_producto_vista_cliente"><a href='cliente_producto_vista.html'>cliente_producto_vista</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_vista_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_puntos_compra.id_cliente references cliente.id_cliente via fk_cliente_puntos_compra_cliente"><a href='cliente_puntos_compra.html'>cliente_puntos_compra</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_puntos_compra_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_registro_afiliacion.id_cliente references cliente.id_cliente via fk_cliente_registro_afiliacion_cliente"><a href='cliente_registro_afiliacion.html'>cliente_registro_afiliacion</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_registro_afiliacion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_soles_compra.id_cliente references cliente.id_cliente via fk_cliente_soles_compra_cliente"><a href='cliente_soles_compra.html'>cliente_soles_compra</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_soles_compra_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_soles_recarga.id_cliente references cliente.id_cliente via fk_cliente_soles_recarga_cliente"><a href='cliente_soles_recarga.html'>cliente_soles_recarga</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_soles_recarga_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_tarjeta.id_cliente references cliente.id_cliente via fk_cliente_tarjeta_cliente"><a href='cliente_tarjeta.html'>cliente_tarjeta</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_tarjeta_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_tarjeta_billetera.id_cliente references cliente.id_cliente via fk_cliente_tarjeta_billetera_cliente"><a href='cliente_tarjeta_billetera.html'>cliente_tarjeta_billetera</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_tarjeta_billetera_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="cliente_tarjeta_bonus.id_cliente references cliente.id_cliente via fk_cliente_tarjeta_bonus_cliente"><a href='cliente_tarjeta_bonus.html'>cliente_tarjeta_bonus</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_tarjeta_bonus_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gamificacion_cliente_cofre.id_cliente references cliente.id_cliente via fk_gamificacion_cliente_cofre_cliente"><a href='gamificacion_cliente_cofre.html'>gamificacion_cliente_cofre</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_cliente_cofre_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gamificacion_cliente_mision.id_cliente references cliente.id_cliente via fk_gamificacion_cliente_mision_cliente"><a href='gamificacion_cliente_mision.html'>gamificacion_cliente_mision</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_cliente_mision_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gamificacion_cliente_premio.id_cliente references cliente.id_cliente via fk_gamificacion_cliente_premio_cliente"><a href='gamificacion_cliente_premio.html'>gamificacion_cliente_premio</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_cliente_premio_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gamificacion_sorteo_cliente.id_cliente references cliente.id_cliente via fk_gamificacion_sorteo_cliente_cliente"><a href='gamificacion_sorteo_cliente.html'>gamificacion_sorteo_cliente</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_sorteo_cliente_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="gamificacion_sorteo_ganador.id_cliente references cliente.id_cliente via fk_gamificacion_sorteo_ganador_cliente"><a href='gamificacion_sorteo_ganador.html'>gamificacion_sorteo_ganador</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_sorteo_ganador_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="log_usuario_interaccion_compartir.id_cliente references cliente.id_cliente via fk_log_usuario_interaccion_compartir_cliente"><a href='log_usuario_interaccion_compartir.html'>log_usuario_interaccion_compartir</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_log_usuario_interaccion_compartir_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="usuario_contactame.id_cliente references cliente.id_cliente via fk_usuario_contactame_cliente"><a href='usuario_contactame.html'>usuario_contactame</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_usuario_contactame_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador único del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tipo_documento">tipo_documento</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Tipo de documento de identidad del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="numero_documento">numero_documento</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número de documento de identidad del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="primer_nombre">primer_nombre</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Primer nombre del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="segundo_nombre">segundo_nombre</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Segundo nombre del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="apellido_materno">apellido_materno</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Apellido materno del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="alias">alias</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Alias o apodo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fecha_nacimiento">fecha_nacimiento</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha de nacimiento del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estado_civil">estado_civil</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Estado civil del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="sexo">sexo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Sexo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cod_celular_pais">cod_celular_pais</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Código de país del número celular del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="numero_celular">numero_celular</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número celular del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="correo_electronico">correo_electronico</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Correo electrónico del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="clave">clave</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Clave o contraseña del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="url_documento_identidad_front">url_documento_identidad_front</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>URL del documento de identidad (frontal) del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="id_cliente_bonus">id_cliente_bonus</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador de cliente en el sistema de bonus</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="creado_el">creado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>CURRENT_TIMESTAMP</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de creación del registro del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="actualizado_el">actualizado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de la última actualización del registro del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="apellido_paterno">apellido_paterno</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Apellido paterno del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cod_asociado">cod_asociado</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Código del asociado al cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estado_cliente">estado_cliente</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Estado actual del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cod_estado_cliente">cod_estado_cliente</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Código del estado actual del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="url_documento_identidad_back">url_documento_identidad_back</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>URL del documento de identidad (posterior) del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="url_foto">url_foto</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>URL de la foto del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cod_asociado_afiliado">cod_asociado_afiliado</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Código del asociado afiliado al cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="bloqueo">bloqueo</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Indica si el cliente está bloqueado</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fecha_intento_bloqueo">fecha_intento_bloqueo</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha del último intento de bloqueo</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="numero_intento_bloqueo">numero_intento_bloqueo</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número de intentos de bloqueo</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> cliente_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id_cliente</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="463,5,832,152">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,2917,419,3808">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="520,169,775,316">
+<area shape="rect" id="node4" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="521,333,773,451">
+<area shape="rect" id="node5" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="529,468,765,615">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="535,632,759,779">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="492,796,803,943">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="521,960,773,1077">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="491,1095,804,1212">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="496,1229,799,1347">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="527,1364,767,1481">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="531,1499,764,1616">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="498,1633,797,1751">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="504,1768,791,1885">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="539,1903,756,2049">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="501,2067,793,2243">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="498,2260,797,2465">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="484,2483,811,2717">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="513,2735,781,3028">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="513,3045,782,3221">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="520,3239,775,3356">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="471,3373,824,3520">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="524,3537,771,3713">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="521,3731,773,3848">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="512,3865,783,3983">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="527,4000,767,4147">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="527,4164,767,4281">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="557,4299,737,4416">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="522,4433,773,4551">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="529,4568,766,4685">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="508,4703,787,4879">
+<area shape="rect" id="node32" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="502,4896,793,5072">
+<area shape="rect" id="node33" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="501,5089,793,5236">
+<area shape="rect" id="node34" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="503,5253,791,5429">
+<area shape="rect" id="node35" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="497,5447,797,5593">
+<area shape="rect" id="node36" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="477,5611,817,5757">
+<area shape="rect" id="node37" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="533,5775,761,5921">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/cliente.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="660,1704,1029,1851">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="203,2859,616,3749">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="717,1868,972,2015">
+<area shape="rect" id="node4" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="719,2032,971,2149">
+<area shape="rect" id="node5" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="727,2167,963,2313">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="733,2331,957,2477">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="689,2495,1000,2641">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="719,2659,971,2776">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="688,2793,1001,2911">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="693,2928,996,3045">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="725,3063,965,3180">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="728,3197,961,3315">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="695,3332,994,3449">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="701,3467,988,3584">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="736,3601,953,3748">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="699,5,991,181">
+<area shape="rect" id="node17" href="prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="5,5715,159,5803">
+<area shape="rect" id="node18" href="prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="293,1432,526,1520">
+<area shape="rect" id="node19" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="1073,5687,1372,5892">
+<area shape="rect" id="node20" href="prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="290,5788,529,5876">
+<area shape="rect" id="node21" href="prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="695,5824,995,5912">
+<area shape="rect" id="node22" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="681,3801,1008,4036">
+<area shape="rect" id="node23" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="711,4053,979,4347">
+<area shape="rect" id="node24" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="710,4364,979,4540">
+<area shape="rect" id="node25" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="717,4557,972,4675">
+<area shape="rect" id="node26" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="668,4692,1021,4839">
+<area shape="rect" id="node27" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="721,4856,968,5032">
+<area shape="rect" id="node28" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="719,5049,971,5167">
+<area shape="rect" id="node29" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="709,5184,980,5301">
+<area shape="rect" id="node30" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="725,5319,965,5465">
+<area shape="rect" id="node31" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="725,5483,965,5600">
+<area shape="rect" id="node32" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="755,5617,935,5735">
+<area shape="rect" id="node33" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="719,199,970,316">
+<area shape="rect" id="node34" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="726,333,963,451">
+<area shape="rect" id="node35" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="705,468,984,644">
+<area shape="rect" id="node36" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="699,661,990,837">
+<area shape="rect" id="node37" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="699,855,991,1001">
+<area shape="rect" id="node38" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="701,1019,989,1195">
+<area shape="rect" id="node39" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="695,1212,995,1359">
+<area shape="rect" id="node40" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="675,1376,1015,1523">
+<area shape="rect" id="node41" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="731,1540,959,1687">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/cliente.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="463,5,832,152">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,2789,419,3680">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="876,217,1131,364">
+<area shape="rect" id="node4" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="529,169,765,316">
+<area shape="rect" id="node5" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="521,369,773,487">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="535,504,759,651">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="492,668,803,815">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="521,832,773,949">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="491,967,804,1084">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="496,1101,799,1219">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="527,1236,767,1353">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="531,1371,764,1488">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="498,1505,797,1623">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="504,1640,791,1757">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="539,1775,756,1921">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="501,1939,793,2115">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="498,2132,797,2337">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="484,2355,811,2589">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="513,2607,781,2900">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="513,2917,782,3093">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="520,3111,775,3228">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="471,3245,824,3392">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="524,3409,771,3585">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="521,3603,773,3720">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="512,3737,783,3855">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="527,3872,767,4019">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="527,4036,767,4153">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="557,4171,737,4288">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="522,4305,773,4423">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="529,4440,766,4557">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="508,4575,787,4751">
+<area shape="rect" id="node32" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="502,4768,793,4944">
+<area shape="rect" id="node33" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="501,4961,793,5108">
+<area shape="rect" id="node34" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="503,5125,791,5301">
+<area shape="rect" id="node35" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="497,5319,797,5465">
+<area shape="rect" id="node36" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="477,5483,817,5629">
+<area shape="rect" id="node37" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="533,5647,761,5793">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/cliente.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="956,1858,1325,2004">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="499,2952,912,3843">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="1405,3891,1660,3979">
+<area shape="rect" id="node4" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1023,3926,1259,4014">
+<area shape="rect" id="node5" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="1015,2022,1267,2139">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="1029,2156,1253,2303">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="985,2320,1296,2467">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="1015,2484,1267,2602">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="984,2619,1297,2736">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="989,2754,1292,2871">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="1021,2888,1261,3006">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="1024,3023,1257,3140">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="991,3158,1290,3275">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="997,3292,1284,3410">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="1032,3427,1249,3574">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="995,30,1287,206">
+<area shape="rect" id="node17" href="prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="279,88,432,176">
+<area shape="rect" id="node18" href="prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="589,88,822,176">
+<area shape="rect" id="node19" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="1383,124,1682,330">
+<area shape="rect" id="node20" href="prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="586,194,825,282">
+<area shape="rect" id="node21" href="prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="991,259,1291,347">
+<area shape="rect" id="node22" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="1369,766,1696,1000">
+<area shape="rect" id="node23" href="tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="603,690,808,778">
+<area shape="rect" id="node24" href="tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="1009,690,1272,778">
+<area shape="rect" id="node25" href="tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="256,690,455,778">
+<area shape="rect" id="node27" href="tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="9,419,209,507">
+<area shape="rect" id="node28" href="tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="5,579,212,667">
+<area shape="rect" id="node26" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="1399,383,1667,676">
+<area shape="rect" id="node29" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="1006,1060,1275,1236">
+<area shape="rect" id="node30" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="1013,4067,1268,4184">
+<area shape="rect" id="node31" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="964,4202,1317,4348">
+<area shape="rect" id="node32" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="1017,831,1264,1007">
+<area shape="rect" id="node33" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="1015,4366,1267,4483">
+<area shape="rect" id="node34" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="1005,4500,1276,4618">
+<area shape="rect" id="node35" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="1021,4635,1261,4782">
+<area shape="rect" id="node36" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="1021,1454,1261,1571">
+<area shape="rect" id="node37" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="1051,1588,1231,1706">
+<area shape="rect" id="node38" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="1015,1723,1266,1840">
+<area shape="rect" id="node39" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="1022,3591,1259,3708">
+<area shape="rect" id="node40" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="1001,5192,1280,5368">
+<area shape="rect" id="node41" href="gamificacion_cofre.html" target="_top" title="gamificacion_cofre" alt="" coords="596,5195,815,5283">
+<area shape="rect" id="node42" href="gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="595,5386,816,5474">
+<area shape="rect" id="node43" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="1387,5488,1678,5664">
+<area shape="rect" id="node44" href="gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="1025,5491,1256,5579">
+<area shape="rect" id="node45" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="1387,4643,1679,4790">
+<area shape="rect" id="node46" href="gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="1024,5386,1257,5474">
+<area shape="rect" id="node47" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="997,4999,1285,5175">
+<area shape="rect" id="node48" href="gamificacion_sorteo.html" target="_top" title="gamificacion_sorteo" alt="" coords="591,4935,819,5023">
+<area shape="rect" id="node49" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="991,4835,1291,4982">
+<area shape="rect" id="node50" href="log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="1740,675,2100,763">
+<area shape="rect" id="node51" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="971,1254,1311,1400">
+<area shape="rect" id="node52" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="1027,3726,1255,3872">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/cliente.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

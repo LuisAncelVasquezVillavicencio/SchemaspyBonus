@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gamificacion_cliente_mision - app_bonus.doc</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.doc</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>gamificacion_cliente_mision</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>Registro de misiones de gamificación asignadas a los clientes</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_mision">id_mision</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="gamificacion_cliente_mision.id_mision&#39;s name implies that it&#39;s a child of gamificacion_mision.id_mision, but it doesn&#39;t reference that column."><a href='gamificacion_mision.html'>gamificacion_mision</a><span class='relatedKey'>.id_mision</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador único de la misión de gamificación</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_socio">id_socio</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="gamificacion_cliente_mision.id_socio&#39;s name implies that it&#39;s a child of gamificacion_socio.id_socio, but it doesn&#39;t reference that column."><a href='gamificacion_socio.html'>gamificacion_socio</a><span class='relatedKey'>.id_socio</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del socio asociado a la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_cliente">id_cliente</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="gamificacion_cliente_mision.id_cliente references cliente.id_cliente via fk_gamificacion_cliente_mision_cliente"><a href='cliente.html'>cliente</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_gamificacion_cliente_mision_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del cliente asignado a la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cantidad">cantidad</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Cantidad de tareas o ítems asociados a la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tipo">tipo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Tipo de misión asignada</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="creado_el">creado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>CURRENT_TIMESTAMP</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de creación del registro de la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="actualizado_el">actualizado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de la última actualización del registro de la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fecha_inicio">fecha_inicio</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha de inicio de la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fecha_fin">fecha_fin</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha de finalización de la misión</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estado">estado</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Estado actual de la misión (ej. pendiente, completada)</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="339,5,729,368">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,67,295,184">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/gamificacion_cliente_mision.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="349,5,719,93">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,1847,295,1964">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="407,111,661,199">
+<area shape="rect" id="node4" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="408,216,660,304">
+<area shape="rect" id="node5" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="416,321,652,409">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="422,427,646,515">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="407,532,661,620">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="408,637,660,725">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="377,743,691,831">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="383,848,685,936">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="414,953,654,1041">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="417,1059,651,1147">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="385,1164,683,1252">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="391,1269,677,1357">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="425,1375,643,1463">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="388,1480,680,1568">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="385,1585,683,1673">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="371,1691,697,1779">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="400,1796,668,1884">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="399,1901,669,1989">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="407,2007,661,2095">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="357,2112,711,2200">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="411,2217,657,2305">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="408,2323,660,2411">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="399,2428,669,2516">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="414,2533,654,2621">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="414,2639,654,2727">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="444,2744,624,2832">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="409,2849,659,2937">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="415,2955,653,3043">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="395,3060,673,3148">
+<area shape="rect" id="node32" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="339,3165,729,3528">
+<area shape="rect" id="node33" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="388,3545,680,3633">
+<area shape="rect" id="node34" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="390,3651,678,3739">
+<area shape="rect" id="node35" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="384,3756,684,3844">
+<area shape="rect" id="node36" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="364,3861,704,3949">
+<area shape="rect" id="node37" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="420,3967,648,4055">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/gamificacion_cliente_mision.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="604,97,995,460">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="271,205,560,323">
+<area shape="rect" id="node3" href="gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="300,5,531,152">
+<area shape="rect" id="node4" href="gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="5,83,227,200">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/gamificacion_cliente_mision.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="339,568,708,656">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,1708,295,1825">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="820,111,1075,199">
+<area shape="rect" id="node4" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="405,147,641,235">
+<area shape="rect" id="node5" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="397,709,649,797">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="411,815,635,903">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="397,920,650,1008">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="397,1025,649,1113">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="367,1131,680,1219">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="372,1236,675,1324">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="403,1341,643,1429">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="407,1447,640,1535">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="374,1552,673,1640">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="380,1657,667,1745">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="415,1763,632,1851">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="377,1868,669,1956">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="374,1973,673,2061">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="360,2079,687,2167">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="389,2184,657,2272">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="389,2289,658,2377">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="396,2395,651,2483">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="347,2500,700,2588">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="400,2605,647,2693">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="397,2711,649,2799">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="388,2816,659,2904">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="403,2921,643,3009">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="403,3027,643,3115">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="433,3132,613,3220">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="398,3237,649,3325">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="405,5,642,93">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="384,3484,663,3572">
+<area shape="rect" id="node32" href="gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="39,3644,261,3732">
+<area shape="rect" id="node33" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="752,3687,1143,4049">
+<area shape="rect" id="node34" href="gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="408,3695,639,3783">
+<area shape="rect" id="node35" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="801,2108,1093,2196">
+<area shape="rect" id="node36" href="gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="407,3589,640,3677">
+<area shape="rect" id="node37" href="gamificacion_socio_bolsa_cofre.html" target="_top" title="gamificacion_socio_bolsa_cofre" alt="" coords="363,3800,683,3888">
+<area shape="rect" id="node38" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="379,3379,667,3467">
+<area shape="rect" id="node39" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="373,252,673,340">
+<area shape="rect" id="node40" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="353,357,693,445">
+<area shape="rect" id="node41" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="409,463,637,551">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/gamificacion_cliente_mision.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

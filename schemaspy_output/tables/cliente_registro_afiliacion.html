@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cliente_registro_afiliacion - app_bonus.doc</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.doc</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>cliente_registro_afiliacion</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span id="id">id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;doc.cliente_registro_afiliacion_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_cliente">id_cliente</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_registro_afiliacion.id_cliente references cliente.id_cliente via fk_cliente_registro_afiliacion_cliente"><a href='cliente.html'>cliente</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_registro_afiliacion_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="estado">estado</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="mensaje">mensaje</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="creado_el">creado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>CURRENT_TIMESTAMP</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="actualizado_el">actualizado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="339,5,709,251">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,37,295,155">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/cliente_registro_afiliacion.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="339,5,709,93">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,1847,295,1964">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="397,111,651,199">
+<area shape="rect" id="node4" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="398,216,650,304">
+<area shape="rect" id="node5" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="406,321,642,409">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="412,427,636,515">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="397,532,651,620">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="398,637,650,725">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="367,743,681,831">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="373,848,675,936">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="404,953,644,1041">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="407,1059,641,1147">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="375,1164,673,1252">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="381,1269,667,1357">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="415,1375,633,1463">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="378,1480,670,1568">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="375,1585,673,1673">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="361,1691,687,1779">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="390,1796,658,1884">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="389,1901,659,1989">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="397,2007,651,2095">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="347,2112,701,2200">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="401,2217,647,2305">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="398,2323,650,2411">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="339,2428,709,2673">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="404,2691,644,2779">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="404,2796,644,2884">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="434,2901,614,2989">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="399,3007,649,3095">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="405,3112,643,3200">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="385,3217,663,3305">
+<area shape="rect" id="node32" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="379,3323,669,3411">
+<area shape="rect" id="node33" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="378,3428,670,3516">
+<area shape="rect" id="node34" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="380,3533,668,3621">
+<area shape="rect" id="node35" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="374,3639,674,3727">
+<area shape="rect" id="node36" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="354,3744,694,3832">
+<area shape="rect" id="node37" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="410,3849,638,3937">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/cliente_registro_afiliacion.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

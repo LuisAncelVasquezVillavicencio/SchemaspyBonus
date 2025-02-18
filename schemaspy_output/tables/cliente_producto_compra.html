@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cliente_producto_compra - app_bonus.doc</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.doc</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>cliente_producto_compra</h1><p><span id="recordNumber">-1</span> rows</p><br />
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-text-o"></i>
+                            <h3 id="Description" class="box-title">Description</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body clearfix">
+                            <p>Registro de compras de productos realizadas por los clientes</p>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_cliente_producto_compra">id_cliente_producto_compra</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;doc.cliente_producto_compra_id_cliente_producto_compra_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador único de la compra del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_cliente">id_cliente</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_cliente references cliente.id_cliente via fk_cliente_producto_compra_cliente"><a href='cliente.html'>cliente</a><span class='relatedKey'>.id_cliente</span></td>
+                                                <td class="constraint detail">fk_cliente_producto_compra_cliente</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del cliente que realiza la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_producto">id_producto</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_producto&#39;s name implies that it&#39;s a child of tienda_producto.id_producto, but it doesn&#39;t reference that column."><a href='tienda_producto.html'>tienda_producto</a><span class='relatedKey'>.id_producto</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del producto comprado</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="cantidad">cantidad</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Cantidad del producto comprado</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_categoria">id_categoria</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_categoria&#39;s name implies that it&#39;s a child of tienda_categoria.id_categoria, but it doesn&#39;t reference that column."><a href='tienda_categoria.html'>tienda_categoria</a><span class='relatedKey'>.id_categoria</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador de la categoría del producto</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_proveedor">id_proveedor</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_proveedor&#39;s name implies that it&#39;s a child of tienda_proveedor.id_proveedor, but it doesn&#39;t reference that column."><a href='tienda_proveedor.html'>tienda_proveedor</a><span class='relatedKey'>.id_proveedor</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del proveedor del producto</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_inventario">id_inventario</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_inventario&#39;s name implies that it&#39;s a child of tienda_inventario.id_inventario, but it doesn&#39;t reference that column."><a href='tienda_inventario.html'>tienda_inventario</a><span class='relatedKey'>.id_inventario</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del inventario del producto</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="precio_total">precio_total</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Precio total de la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="puntos_total">puntos_total</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Puntos totales obtenidos por la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="creado_el">creado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>CURRENT_TIMESTAMP</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de creación del registro de la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="au_ip_publica">au_ip_publica</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Dirección IP pública del dispositivo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="au_sistema_operativo">au_sistema_operativo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Sistema operativo del dispositivo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="au_tipo_dispositivo">au_tipo_dispositivo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Tipo de dispositivo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="au_id_dispositivo">au_id_dispositivo</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador único del dispositivo del cliente</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="actualizado_el">actualizado_el</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Fecha y hora de la última actualización del registro de la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="orden">orden</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número de orden asociado a la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="transaccion">transaccion</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número de transacción asociado a la compra</p></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_inventario_precio">id_inventario_precio</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="cliente_producto_compra.id_inventario_precio&#39;s name implies that it&#39;s a child of tienda_inventario_precio.id_inventario_precio, but it doesn&#39;t reference that column."><a href='tienda_inventario_precio.html'>tienda_inventario_precio</a><span class='relatedKey'>.id_inventario_precio</span></td>
+                                                <td class="constraint detail">Implied Constraint</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><p>Identificador del precio del inventario del producto</p></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="num_operacion">num_operacion</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td><p>Número de operación asociado a la compra</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> cliente_producto_compra_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id_cliente_producto_compra</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="339,5,731,632">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,37,295,155">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/cliente_producto_compra.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="350,5,719,93">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="5,2133,295,2251">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="407,111,662,199">
+<area shape="rect" id="node4" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="409,216,661,304">
+<area shape="rect" id="node5" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="417,321,653,409">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="423,427,647,515">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="408,532,661,620">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="409,637,661,725">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="378,743,691,831">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="383,848,686,936">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="415,953,655,1041">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="418,1059,651,1147">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="385,1164,684,1252">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="391,1269,678,1357">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="426,1375,643,1463">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="389,1480,681,1568">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="385,1585,684,1673">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="371,1691,698,1779">
+<area shape="rect" id="node19" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="339,1796,731,2423">
+<area shape="rect" id="node20" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="400,2440,669,2528">
+<area shape="rect" id="node21" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="407,2545,662,2633">
+<area shape="rect" id="node22" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="358,2651,711,2739">
+<area shape="rect" id="node23" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="411,2756,658,2844">
+<area shape="rect" id="node24" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="409,2861,661,2949">
+<area shape="rect" id="node25" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="399,2967,670,3055">
+<area shape="rect" id="node26" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="415,3072,655,3160">
+<area shape="rect" id="node27" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="415,3177,655,3265">
+<area shape="rect" id="node28" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="445,3283,625,3371">
+<area shape="rect" id="node29" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="409,3388,660,3476">
+<area shape="rect" id="node30" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="416,3493,653,3581">
+<area shape="rect" id="node31" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="395,3599,674,3687">
+<area shape="rect" id="node32" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="389,3704,680,3792">
+<area shape="rect" id="node33" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="389,3809,681,3897">
+<area shape="rect" id="node34" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="391,3915,679,4003">
+<area shape="rect" id="node35" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="385,4020,685,4108">
+<area shape="rect" id="node36" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="365,4125,705,4213">
+<area shape="rect" id="node37" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="421,4231,649,4319">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/cliente_producto_compra.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="1113,33,1505,660">
+<area shape="rect" id="node2" href="tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="9,132,209,279">
+<area shape="rect" id="node3" href="cliente.html" target="_top" title="cliente" alt="" coords="780,5,1069,123">
+<area shape="rect" id="node4" href="tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="519,457,736,663">
+<area shape="rect" id="node5" href="tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="793,528,1056,704">
+<area shape="rect" id="node6" href="tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="256,140,475,404">
+<area shape="rect" id="node7" href="tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="5,305,212,452">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/cliente_producto_compra.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="1509,1380,1879,1468">
+<area shape="rect" id="node2" href="cliente.html" target="_top" title="cliente" alt="" coords="1176,1851,1465,1968">
+<area shape="rect" id="node3" href="cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="1991,784,2246,872">
+<area shape="rect" id="node4" href="cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1576,1239,1812,1327">
+<area shape="rect" id="node5" href="cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="1568,1486,1820,1574">
+<area shape="rect" id="node6" href="cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="1582,1591,1806,1679">
+<area shape="rect" id="node7" href="cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="1567,1696,1821,1784">
+<area shape="rect" id="node8" href="cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="1568,1802,1820,1890">
+<area shape="rect" id="node9" href="cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="1537,1907,1851,1995">
+<area shape="rect" id="node10" href="cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="1543,2012,1845,2100">
+<area shape="rect" id="node11" href="cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="1574,2118,1814,2206">
+<area shape="rect" id="node12" href="cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="1577,2223,1811,2311">
+<area shape="rect" id="node13" href="cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="1545,2328,1843,2416">
+<area shape="rect" id="node14" href="cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="1551,2434,1837,2522">
+<area shape="rect" id="node15" href="cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="1585,2539,1803,2627">
+<area shape="rect" id="node16" href="cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="1548,2644,1840,2732">
+<area shape="rect" id="node17" href="cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="1545,2750,1843,2838">
+<area shape="rect" id="node18" href="cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="1955,3946,2282,4034">
+<area shape="rect" id="node19" href="tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="1218,3984,1423,4072">
+<area shape="rect" id="node20" href="tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="1563,4019,1825,4107">
+<area shape="rect" id="node21" href="tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="484,3666,683,3754">
+<area shape="rect" id="node45" href="usuario.html" target="_top" title="usuario" alt="" coords="5,3870,136,3958">
+<area shape="rect" id="node46" href="tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="810,3844,1102,3932">
+<area shape="rect" id="node23" href="tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="183,1803,383,1891">
+<area shape="rect" id="node24" href="tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="180,3783,387,3871">
+<area shape="rect" id="node44" href="tienda_catalogo.html" target="_top" title="tienda_catalogo" alt="" coords="186,3678,381,3766">
+<area shape="rect" id="node22" href="cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="1923,1727,2315,2354">
+<area shape="rect" id="node25" href="cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="1559,3418,1829,3506">
+<area shape="rect" id="node26" href="cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="1567,2855,1821,2943">
+<area shape="rect" id="node27" href="cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="1517,2960,1871,3048">
+<area shape="rect" id="node28" href="cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="1571,3700,1817,3788">
+<area shape="rect" id="node29" href="cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="1568,3066,1820,3154">
+<area shape="rect" id="node30" href="cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="1559,3171,1829,3259">
+<area shape="rect" id="node31" href="cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="1574,3276,1814,3364">
+<area shape="rect" id="node32" href="cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="1574,186,1814,274">
+<area shape="rect" id="node33" href="cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="1604,291,1784,379">
+<area shape="rect" id="node34" href="cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="1569,396,1819,484">
+<area shape="rect" id="node35" href="cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="1575,502,1813,590">
+<area shape="rect" id="node36" href="gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="1555,607,1833,695">
+<area shape="rect" id="node37" href="gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="1549,712,1839,800">
+<area shape="rect" id="node38" href="gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="1548,818,1840,906">
+<area shape="rect" id="node39" href="gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="1550,923,1838,1011">
+<area shape="rect" id="node40" href="gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="1544,1028,1844,1116">
+<area shape="rect" id="node41" href="log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="2359,3980,2719,4068">
+<area shape="rect" id="node42" href="log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="1524,3559,1864,3647">
+<area shape="rect" id="node43" href="mv_tienda_categoria_jerarquia.html" target="_top" title="mv_tienda_categoria_jerarquia" alt="" coords="431,91,736,155">
+<area shape="rect" id="node47" href="tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="1556,3842,1832,3930">
+<area shape="rect" id="node48" href="tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="822,3950,1090,4038">
+<area shape="rect" id="node49" href="tienda_productos_codigos_virtuales.html" target="_top" title="tienda_productos_codigos_virtuales" alt="" coords="780,3487,1132,3575">
+<area shape="rect" id="node50" href="tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="455,3799,712,3887">
+<area shape="rect" id="node51" href="usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="1580,1134,1808,1222">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/cliente_producto_compra.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

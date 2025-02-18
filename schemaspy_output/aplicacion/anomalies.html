@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>app_bonus.aplicacion</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.aplicacion</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Anomalies</h1><br />
+                    <div class="callout callout-warning">
+                        <p>Things that might not be 'quite right' about your database and schema</p>
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-6"> <!-- Implied Relationship -->
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Columns whose name and type imply a relationship to another table's primary key</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table
+                                            id="implied_constraint"
+                                            class="table table-bordered table-striped dataTable"
+                                            role="grid"
+                                            data-paging="true"
+                                            data-page-length="10"
+                                            data-length-change="false">
+                                        <thead align='left'>
+                                            <tr>
+                                                <th>Child Column</th>
+                                                <th>Implied Parent Column</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href='tables/app_movil_config_afiliacion.html'>app_movil_config_afiliacion</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/app_movil_config_iniciar_sesion.html'>app_movil_config_iniciar_sesion</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/app_movil_config_secuencia_bienvenida.html'>app_movil_config_secuencia_bienvenida</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_direccion_envio.html'>cliente_direccion_envio</a>.[id_direccion]</td>
+                                                <td><a href='tables/cliente_ext_direccion.html'>cliente_ext_direccion</a>.[id_direccion]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_producto_compra.html'>cliente_producto_compra</a>.[id_categoria]</td>
+                                                <td><a href='tables/tienda_categoria.html'>tienda_categoria</a>.[id_categoria]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_producto_compra.html'>cliente_producto_compra</a>.[id_proveedor]</td>
+                                                <td><a href='tables/tienda_proveedor.html'>tienda_proveedor</a>.[id_proveedor]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta_billetera_referencia.html'>cliente_tarjeta_billetera_referencia</a>.[id]</td>
+                                                <td><a href='tables/personal_access_tokens.html'>personal_access_tokens</a>.[id]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_cofre.html'>gamificacion_cliente_cofre</a>.[id_cofre]</td>
+                                                <td><a href='tables/gamificacion_cofre.html'>gamificacion_cofre</a>.[id_cofre]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_cofre.html'>gamificacion_cliente_cofre</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_mision.html'>gamificacion_cliente_mision</a>.[id_mision]</td>
+                                                <td><a href='tables/gamificacion_mision.html'>gamificacion_mision</a>.[id_mision]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_mision.html'>gamificacion_cliente_mision</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_premio.html'>gamificacion_cliente_premio</a>.[id_premio]</td>
+                                                <td><a href='tables/gamificacion_premio.html'>gamificacion_premio</a>.[id_premio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_mision.html'>gamificacion_mision</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_premio.html'>gamificacion_premio</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_premio_codigo_stock.html'>gamificacion_premio_codigo_stock</a>.[id_premio]</td>
+                                                <td><a href='tables/gamificacion_premio.html'>gamificacion_premio</a>.[id_premio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_socio_bolsa_cofre.html'>gamificacion_socio_bolsa_cofre</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_sorteo_cliente.html'>gamificacion_sorteo_cliente</a>.[id_socio]</td>
+                                                <td><a href='tables/gamificacion_socio.html'>gamificacion_socio</a>.[id_socio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_sorteo_cliente.html'>gamificacion_sorteo_cliente</a>.[id_sorteo]</td>
+                                                <td><a href='tables/gamificacion_sorteo.html'>gamificacion_sorteo</a>.[id_sorteo]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_sorteo_ganador.html'>gamificacion_sorteo_ganador</a>.[id_sorteo]</td>
+                                                <td><a href='tables/gamificacion_sorteo.html'>gamificacion_sorteo</a>.[id_sorteo]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/historial_codigos_premios.html'>historial_codigos_premios</a>.[id_premio]</td>
+                                                <td><a href='tables/gamificacion_premio.html'>gamificacion_premio</a>.[id_premio]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/historial_codigos_premios.html'>historial_codigos_premios</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/historial_codigos_virtuales.html'>historial_codigos_virtuales</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/historial_import_productos.html'>historial_import_productos</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/lk_notificaciones.html'>lk_notificaciones</a>.[id_canal]</td>
+                                                <td><a href='tables/lk_canales.html'>lk_canales</a>.[id_canal]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/log_cliente_producto_carrito_compra.html'>log_cliente_producto_carrito_compra</a>.[id_carrito]</td>
+                                                <td><a href='tables/cliente_producto_carrito_compra.html'>cliente_producto_carrito_compra</a>.[id_carrito]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/prefs_quiz_avatars.html'>prefs_quiz_avatars</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tabla_prueba.html'>tabla_prueba</a>.[id_categoria]</td>
+                                                <td><a href='tables/tienda_categoria.html'>tienda_categoria</a>.[id_categoria]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_banner.html'>tienda_banner</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_catalogo.html'>tienda_catalogo</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_categoria.html'>tienda_categoria</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario.html'>tienda_inventario</a>.[id_multimedia]</td>
+                                                <td><a href='tables/tienda_producto_multimedia.html'>tienda_producto_multimedia</a>.[id_multimedia]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario.html'>tienda_inventario</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario_multimedia_null.html'>tienda_inventario_multimedia_null</a>.[id_multimedia]</td>
+                                                <td><a href='tables/tienda_producto_multimedia.html'>tienda_producto_multimedia</a>.[id_multimedia]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario_multimedia_null.html'>tienda_inventario_multimedia_null</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario_precio.html'>tienda_inventario_precio</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario_variante.html'>tienda_inventario_variante</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto.html'>tienda_producto</a>.[id_catalogo]</td>
+                                                <td><a href='tables/tienda_catalogo.html'>tienda_catalogo</a>.[id_catalogo]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto.html'>tienda_producto</a>.[id_categoria]</td>
+                                                <td><a href='tables/tienda_categoria.html'>tienda_categoria</a>.[id_categoria]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto.html'>tienda_producto</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto_etiqueta.html'>tienda_producto_etiqueta</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto_multimedia.html'>tienda_producto_multimedia</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_productos_codigos_virtua_1aa049db.html'>tienda_productos_codigos_virtuales_errores</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_proveedor.html'>tienda_proveedor</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_proveedor_maps.html'>tienda_proveedor_maps</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/utilidades_banners_publicitarios.html'>utilidades_banners_publicitarios</a>.[id_usuario]</td>
+                                                <td><a href='tables/usuario.html'>usuario</a>.[id_usuario]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> <!-- Tables without indexes -->
+                            <div class="box box-danger">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Tables without indexes</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table
+                                            id="un_indexed_table"
+                                            class="table table-bordered table-striped dataTable"
+                                            role="grid"
+                                            data-paging="true"
+                                            data-page-length="10"
+                                            data-length-change="false">
+                                        <thead align='left'>
+                                            <tr>
+                                                <th>Table</th>
+                                                <th>Rows</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href='tables/app_version.html'>app_version</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_datos_familiares.html'>cliente_datos_familiares</a></td>
+                                                <td>233</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_direccion_envio.html'>cliente_direccion_envio</a></td>
+                                                <td>185</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_estado_registro.html'>cliente_estado_registro</a></td>
+                                                <td>60</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_geolocalizacion.html'>cliente_geolocalizacion</a></td>
+                                                <td>1092</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_historial_codigo_virtual.html'>cliente_historial_codigo_virtual</a></td>
+                                                <td>37</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_informacion_adicional.html'>cliente_informacion_adicional</a></td>
+                                                <td>42</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_otp_generico.html'>cliente_otp_generico</a></td>
+                                                <td>665</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_otp_transferir_puntos.html'>cliente_otp_transferir_puntos</a></td>
+                                                <td>58</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_otp_transferir_soles.html'>cliente_otp_transferir_soles</a></td>
+                                                <td>39</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_prefs_quiz_categoria.html'>cliente_prefs_quiz_categoria</a></td>
+                                                <td>182</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_prefs_quiz_preguntas.html'>cliente_prefs_quiz_preguntas</a></td>
+                                                <td>228</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_producto_orden.html'>cliente_producto_orden</a></td>
+                                                <td>655</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_producto_vista.html'>cliente_producto_vista</a></td>
+                                                <td>515</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_puntos_compra.html'>cliente_puntos_compra</a></td>
+                                                <td>142</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_registro_afiliacion.html'>cliente_registro_afiliacion</a></td>
+                                                <td>88</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_soles_recarga.html'>cliente_soles_recarga</a></td>
+                                                <td>186</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta.html'>cliente_tarjeta</a></td>
+                                                <td>23</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta_billetera.html'>cliente_tarjeta_billetera</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta_billetera_referencia.html'>cliente_tarjeta_billetera_referencia</a></td>
+                                                <td>96790</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta_bonus.html'>cliente_tarjeta_bonus</a></td>
+                                                <td>75</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta_bonus_transaccion.html'>cliente_tarjeta_bonus_transaccion</a></td>
+                                                <td>3401</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/dbeaver_tablas.html'>dbeaver_tablas</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/documentacion1.html'>documentacion1</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_cofre.html'>gamificacion_cliente_cofre</a></td>
+                                                <td>28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_mision.html'>gamificacion_cliente_mision</a></td>
+                                                <td>20</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_cliente_premio.html'>gamificacion_cliente_premio</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_sorteo_cliente.html'>gamificacion_sorteo_cliente</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/gamificacion_sorteo_ganador.html'>gamificacion_sorteo_ganador</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/log_cliente_producto_carrito_compra.html'>log_cliente_producto_carrito_compra</a></td>
+                                                <td>974</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/log_usuario_interaccion_compartir.html'>log_usuario_interaccion_compartir</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/log_usuario_sesion.html'>log_usuario_sesion</a></td>
+                                                <td>31158</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_f12022_provincia.html'>mb_f12022_provincia</a></td>
+                                                <td>197</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_f12023_distrito.html'>mb_f12023_distrito</a></td>
+                                                <td>1866</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_forma_pago.html'>mb_forma_pago</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_nbdis10.html'>mb_nbdis10</a></td>
+                                                <td>1865</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_nbdpt10.html'>mb_nbdpt10</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_nbpai10.html'>mb_nbpai10</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_nbprv10.html'>mb_nbprv10</a></td>
+                                                <td>197</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_punto_canje.html'>mb_punto_canje</a></td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_punto_venta.html'>mb_punto_venta</a></td>
+                                                <td>2887</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_tipo_canje.html'>mb_tipo_canje</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/recomendacion_productos_canje2.html'>recomendacion_productos_canje2</a></td>
+                                                <td>606268</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/recomendacion_productos_canje3.html'>recomendacion_productos_canje3</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/rol_permiso.html'>rol_permiso</a></td>
+                                                <td>152</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tapi_payments_temp.html'>tapi_payments_temp</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tapi_recharge_companies.html'>tapi_recharge_companies</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_inventario_multimedia_null.html'>tienda_inventario_multimedia_null</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto_cercano.html'>tienda_producto_cercano</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/tienda_producto_tendencia.html'>tienda_producto_tendencia</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/usuario_permiso.html'>usuario_permiso</a></td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/usuario_recomendacion_producto_ml.html'>usuario_recomendacion_producto_ml</a></td>
+                                                <td>151567</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/usuario_rol.html'>usuario_rol</a></td>
+                                                <td>17</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/usuario_transaccion_izipay_log.html'>usuario_transaccion_izipay_log</a></td>
+                                                <td>227</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/utilidad_marcas.html'>utilidad_marcas</a></td>
+                                                <td>-1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/utilidad_precio_envio.html'>utilidad_precio_envio</a></td>
+                                                <td>274</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/utilidad_precio_envio1.html'>utilidad_precio_envio1</a></td>
+                                                <td>1096</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/utilidad_precio_envio_antiguo.html'>utilidad_precio_envio_antiguo</a></td>
+                                                <td>274</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> <!-- Tables that contain a single column -->
+                            <div class="box box-info">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Tables that contain a single column</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table
+                                            id="single_column_table"
+                                            class="table table-bordered table-striped dataTable"
+                                            role="grid"
+                                            data-paging="true"
+                                            data-page-length="10"
+                                            data-length-change="false">
+                                        <thead align='left'>
+                                            <tr>
+                                                <th>Table</th>
+                                                <th>Column</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3">Anomaly not detected</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> <!-- Tables with incrementing column names, potentially indicating denormalization -->
+                            <div class="box box-danger">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Tables with incrementing column names, potentially indicating denormalization</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table
+                                            id="inc_column_table"
+                                            class="table table-bordered table-striped dataTable"
+                                            role="grid"
+                                            data-paging="true"
+                                            data-page-length="10"
+                                            data-length-change="false">
+                                        <thead align='left'>
+                                            <tr>
+                                                <th>Table</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href='tables/app_movil_config_afiliacion.html'>app_movil_config_afiliacion</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/cliente_tarjeta.html'>cliente_tarjeta</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/mb_punto_venta.html'>mb_punto_venta</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/modelo_matrix_cliente.html'>modelo_matrix_cliente</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/recomendacion_productos_canje2.html'>recomendacion_productos_canje2</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/recomendacion_productos_canje3.html'>recomendacion_productos_canje3</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href='tables/usuario_recomendacion_producto_ml.html'>usuario_recomendacion_producto_ml</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> <!-- Columns whose default value is the word 'NULL' or 'null', but the SQL NULL value may have been intended -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title" title="Columns whose default value is the word 'NULL' or 'null', but the SQL NULL value may have been intende">Columns whose default value is the word 'NULL' or 'null'</h3>
+                                    <div class="box-tools pull-right">
+                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <table
+                                            id="null_string_table"
+                                            class="table table-bordered table-striped dataTable"
+                                            role="grid"
+                                            data-paging="true"
+                                            data-page-length="10"
+                                            data-length-change="false">
+                                        <thead align='left'>
+                                            <tr>
+                                                <th>Table</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="3">Anomaly not detected</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="anomalies.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+users
+table_1
+password_resets
+migrations
+login_attempts
+failed_jobs
+cliente_public_solicitud_empleo
+cliente_notificaciones
+cliente_comprobantes_compra_fisicos
+banners
+tienda_category

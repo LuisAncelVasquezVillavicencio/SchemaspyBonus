@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>app_bonus.aplicacion</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.aplicacion</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="572,585,835,761">
+<area shape="rect" id="node4" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="276,712,493,917">
+<area shape="rect" id="node2" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="275,333,494,597">
+<area shape="rect" id="node7" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="5,199,212,345">
+<area shape="rect" id="node3" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="305,199,464,316">
+<area shape="rect" id="node5" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="565,779,841,955">
+<area shape="rect" id="node6" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="569,199,837,375">
+<area shape="rect" id="node8" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="256,5,513,181">
+<area shape="rect" id="node9" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="557,392,849,568">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="572,1464,835,1851">
+<area shape="rect" id="node4" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="276,1624,493,2157">
+<area shape="rect" id="node2" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="275,696,494,1464">
+<area shape="rect" id="node7" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="5,380,212,825">
+<area shape="rect" id="node3" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="305,468,464,679">
+<area shape="rect" id="node5" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="565,1868,841,2196">
+<area shape="rect" id="node6" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="569,468,837,679">
+<area shape="rect" id="node8" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="256,5,513,451">
+<area shape="rect" id="node9" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="557,696,849,1317">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/prefs_quiz_avatars.html" target="_top" title="prefs_quiz_avatars" alt="" coords="755,2479,973,2625">
+<area shape="rect" id="node46" href="tables/usuario.html" target="_top" title="usuario" alt="" coords="360,2180,544,2297">
+<area shape="rect" id="node2" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="2230,2085,2493,2261">
+<area shape="rect" id="node23" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="1861,1380,2078,1585">
+<area shape="rect" id="node3" href="tables/lk_canales.html" target="_top" title="lk_canales" alt="" coords="1890,760,2049,877">
+<area shape="rect" id="node4" href="tables/utilidades_banners_publicitarios.html" target="_top" title="utilidades_banners_publicitarios" alt="" coords="703,1167,1025,1313">
+<area shape="rect" id="node5" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="1159,2492,1378,2756">
+<area shape="rect" id="node33" href="tables/tienda_catalogo.html" target="_top" title="tienda_catalogo" alt="" coords="761,2843,967,3048">
+<area shape="rect" id="node34" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="761,2643,967,2789">
+<area shape="rect" id="node36" href="tables/tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="764,1003,964,1149">
+<area shape="rect" id="node6" href="tables/historial_import_productos.html" target="_top" title="historial_import_productos" alt="" coords="723,1331,1005,1477">
+<area shape="rect" id="node7" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="2234,596,2489,713">
+<area shape="rect" id="node38" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1851,596,2087,713">
+<area shape="rect" id="node8" href="tables/tienda_productos_codigos_virtua_1aa049db.html" target="_top" title="tienda_productos_codigos_virtuales_errores" alt="" coords="656,1495,1072,1641">
+<area shape="rect" id="node9" href="tables/historial_codigos_virtuales.html" target="_top" title="historial_codigos_virtuales" alt="" coords="724,1659,1004,1805">
+<area shape="rect" id="node10" href="tables/personal_access_tokens.html" target="_top" title="personal_access_tokens" alt="" coords="1838,373,2101,579">
+<area shape="rect" id="node11" href="tables/gamificacion_cofre.html" target="_top" title="gamificacion_cofre" alt="" coords="5,3960,248,4077">
+<area shape="rect" id="node12" href="tables/gamificacion_socio_bolsa_cofre.html" target="_top" title="gamificacion_socio_bolsa_cofre" alt="" coords="292,3596,612,3743">
+<area shape="rect" id="node30" href="tables/gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="16,3808,237,3925">
+<area shape="rect" id="node13" href="tables/app_movil_config_secuencia_bienvenida.html" target="_top" title="app_movil_config_secuencia_bienvenida" alt="" coords="670,1823,1058,1969">
+<area shape="rect" id="node14" href="tables/historial_codigos_premios.html" target="_top" title="historial_codigos_premios" alt="" coords="726,3209,1002,3385">
+<area shape="rect" id="node20" href="tables/gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="335,3432,569,3579">
+<area shape="rect" id="node15" href="tables/tabla_prueba.html" target="_top" title="tabla_prueba" alt="" coords="1168,1003,1369,1149">
+<area shape="rect" id="node16" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="302,4288,602,4405">
+<area shape="rect" id="node24" href="tables/gamificacion_sorteo.html" target="_top" title="gamificacion_sorteo" alt="" coords="13,4205,241,4323">
+<area shape="rect" id="node17" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="1806,239,2133,356">
+<area shape="rect" id="node18" href="tables/app_movil_config_iniciar_sesion.html" target="_top" title="app_movil_config_iniciar_sesion" alt="" coords="702,1987,1026,2133">
+<area shape="rect" id="node19" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="1189,2967,1348,3084">
+<area shape="rect" id="node21" href="tables/gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="337,3760,567,3907">
+<area shape="rect" id="node22" href="tables/gamificacion_premio_codigo_stock.html" target="_top" title="gamificacion_premio_codigo_stock" alt="" coords="691,3403,1037,3549">
+<area shape="rect" id="node40" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="1465,2013,1757,2189">
+<area shape="rect" id="node25" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="2223,1348,2499,1524">
+<area shape="rect" id="node26" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="313,3960,591,4107">
+<area shape="rect" id="node27" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="1477,2908,1745,3084">
+<area shape="rect" id="node28" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="718,3567,1010,3684">
+<area shape="rect" id="node29" href="tables/lk_notificaciones.html" target="_top" title="lk_notificaciones" alt="" coords="2260,731,2463,877">
+<area shape="rect" id="node31" href="tables/log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="2181,239,2541,356">
+<area shape="rect" id="node32" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="308,4124,596,4271">
+<area shape="rect" id="node35" href="tables/cliente_tarjeta_billetera_referencia.html" target="_top" title="cliente_tarjeta_billetera_referencia" alt="" coords="2193,373,2529,491">
+<area shape="rect" id="node37" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="1140,2773,1397,2949">
+<area shape="rect" id="node39" href="tables/spatial_ref_sys.html" target="_top" title="spatial_ref_sys" alt="" coords="1875,55,2063,172">
+<area shape="rect" id="node41" href="tables/app_movil_config_afiliacion.html" target="_top" title="app_movil_config_afiliacion" alt="" coords="721,2151,1007,2297">
+<area shape="rect" id="node42" href="tables/tienda_banner.html" target="_top" title="tienda_banner" alt="" coords="767,2315,961,2461">
+<area shape="rect" id="node43" href="tables/tienda_inventario_multimedia_null.html" target="_top" title="tienda_inventario_multimedia_null" alt="" coords="1801,2531,2137,2677">
+<area shape="rect" id="node44" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="719,3808,1009,3955">
+<area shape="rect" id="node45" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="1135,1788,1403,1964">
+<area shape="rect" id="node47" href="tables/geography_columns.html" target="_top" title="geography_columns" alt="" coords="2248,5,2475,99">
+<area shape="rect" id="node48" href="tables/mv_tienda_categoria_jerarquia.html" target="_top" title="mv_tienda_categoria_jerarquia" alt="" coords="1116,1167,1421,1260">
+<area shape="rect" id="node49" href="tables/geometry_columns.html" target="_top" title="geometry_columns" alt="" coords="2253,116,2470,209">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/prefs_quiz_avatars.html" target="_top" title="prefs_quiz_avatars" alt="" coords="755,6563,973,6920">
+<area shape="rect" id="node46" href="tables/usuario.html" target="_top" title="usuario" alt="" coords="360,5784,544,6259">
+<area shape="rect" id="node2" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="2230,7209,2493,7596">
+<area shape="rect" id="node23" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="1861,4967,2078,5500">
+<area shape="rect" id="node3" href="tables/lk_canales.html" target="_top" title="lk_canales" alt="" coords="1890,2209,2049,2449">
+<area shape="rect" id="node4" href="tables/utilidades_banners_publicitarios.html" target="_top" title="utilidades_banners_publicitarios" alt="" coords="703,2979,1025,3600">
+<area shape="rect" id="node5" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="1159,6635,1378,7403">
+<area shape="rect" id="node33" href="tables/tienda_catalogo.html" target="_top" title="tienda_catalogo" alt="" coords="761,7436,967,8057">
+<area shape="rect" id="node34" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="761,6937,967,7383">
+<area shape="rect" id="node36" href="tables/tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="764,2575,964,2961">
+<area shape="rect" id="node6" href="tables/historial_import_productos.html" target="_top" title="historial_import_productos" alt="" coords="723,3617,1005,3887">
+<area shape="rect" id="node7" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="2234,1395,2489,2016">
+<area shape="rect" id="node38" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1851,1395,2087,2016">
+<area shape="rect" id="node8" href="tables/tienda_productos_codigos_virtua_1aa049db.html" target="_top" title="tienda_productos_codigos_virtuales_errores" alt="" coords="656,3904,1072,4173">
+<area shape="rect" id="node9" href="tables/historial_codigos_virtuales.html" target="_top" title="historial_codigos_virtuales" alt="" coords="724,4191,1004,4519">
+<area shape="rect" id="node10" href="tables/personal_access_tokens.html" target="_top" title="personal_access_tokens" alt="" coords="1838,1049,2101,1377">
+<area shape="rect" id="node11" href="tables/gamificacion_cofre.html" target="_top" title="gamificacion_cofre" alt="" coords="5,10040,248,10368">
+<area shape="rect" id="node12" href="tables/gamificacion_socio_bolsa_cofre.html" target="_top" title="gamificacion_socio_bolsa_cofre" alt="" coords="292,9203,612,9472">
+<area shape="rect" id="node30" href="tables/gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="16,9783,237,10023">
+<area shape="rect" id="node13" href="tables/app_movil_config_secuencia_bienvenida.html" target="_top" title="app_movil_config_secuencia_bienvenida" alt="" coords="670,4536,1058,5040">
+<area shape="rect" id="node14" href="tables/historial_codigos_premios.html" target="_top" title="historial_codigos_premios" alt="" coords="726,8219,1002,8517">
+<area shape="rect" id="node20" href="tables/gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="335,8564,569,9185">
+<area shape="rect" id="node15" href="tables/tabla_prueba.html" target="_top" title="tabla_prueba" alt="" coords="1168,2575,1369,2903">
+<area shape="rect" id="node16" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="302,10679,602,10919">
+<area shape="rect" id="node24" href="tables/gamificacion_sorteo.html" target="_top" title="gamificacion_sorteo" alt="" coords="13,10564,241,10921">
+<area shape="rect" id="node17" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="1806,587,2133,1003">
+<area shape="rect" id="node18" href="tables/app_movil_config_iniciar_sesion.html" target="_top" title="app_movil_config_iniciar_sesion" alt="" coords="702,5057,1026,5444">
+<area shape="rect" id="node19" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="1189,7883,1348,8093">
+<area shape="rect" id="node21" href="tables/gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="337,9489,567,9935">
+<area shape="rect" id="node22" href="tables/gamificacion_premio_codigo_stock.html" target="_top" title="gamificacion_premio_codigo_stock" alt="" coords="691,8535,1037,8804">
+<area shape="rect" id="node40" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="1465,5911,1757,6532">
+<area shape="rect" id="node25" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="2223,3044,2499,3372">
+<area shape="rect" id="node26" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="313,9988,591,10375">
+<area shape="rect" id="node27" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="1477,7883,1745,8093">
+<area shape="rect" id="node28" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="718,8821,1010,9091">
+<area shape="rect" id="node29" href="tables/lk_notificaciones.html" target="_top" title="lk_notificaciones" alt="" coords="2260,2033,2463,2332">
+<area shape="rect" id="node31" href="tables/log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="2181,587,2541,1032">
+<area shape="rect" id="node32" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="308,10392,596,10661">
+<area shape="rect" id="node35" href="tables/cliente_tarjeta_billetera_referencia.html" target="_top" title="cliente_tarjeta_billetera_referencia" alt="" coords="2193,1049,2529,1319">
+<area shape="rect" id="node37" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="1140,7420,1397,7865">
+<area shape="rect" id="node39" href="tables/spatial_ref_sys.html" target="_top" title="spatial_ref_sys" alt="" coords="1875,256,2063,467">
+<area shape="rect" id="node41" href="tables/app_movil_config_afiliacion.html" target="_top" title="app_movil_config_afiliacion" alt="" coords="721,5461,1007,5907">
+<area shape="rect" id="node42" href="tables/tienda_banner.html" target="_top" title="tienda_banner" alt="" coords="767,5924,961,6545">
+<area shape="rect" id="node43" href="tables/tienda_inventario_multimedia_null.html" target="_top" title="tienda_inventario_multimedia_null" alt="" coords="1801,5975,2137,6508">
+<area shape="rect" id="node44" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="719,9687,1009,10044">
+<area shape="rect" id="node45" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="1135,4633,1403,5255">
+<area shape="rect" id="node47" href="tables/geography_columns.html" target="_top" title="geography_columns" alt="" coords="2248,5,2475,251">
+<area shape="rect" id="node48" href="tables/mv_tienda_categoria_jerarquia.html" target="_top" title="mv_tienda_categoria_jerarquia" alt="" coords="1116,2920,1421,3253">
+<area shape="rect" id="node49" href="tables/geometry_columns.html" target="_top" title="geometry_columns" alt="" coords="2253,268,2470,513">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

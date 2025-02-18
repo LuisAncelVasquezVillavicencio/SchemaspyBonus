@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>app_bonus.doc</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>app_bonus</b></a><span class="navbar-brand" style="padding-left: 0">.doc</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="980,6783,1243,6959">
+<area shape="rect" id="node22" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="617,6908,835,7113">
+<area shape="rect" id="node2" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="617,6531,835,6795">
+<area shape="rect" id="node35" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="249,6396,456,6543">
+<area shape="rect" id="node3" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="599,2068,853,2215">
+<area shape="rect" id="node43" href="tables/cliente.html" target="_top" title="cliente" alt="" coords="208,2896,497,3013">
+<area shape="rect" id="node4" href="tables/cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="591,2232,861,2349">
+<area shape="rect" id="node5" href="tables/cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="549,2367,903,2513">
+<area shape="rect" id="node6" href="tables/cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="580,5,872,181">
+<area shape="rect" id="node7" href="tables/prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="5,5876,164,5993">
+<area shape="rect" id="node9" href="tables/prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="236,228,469,375">
+<area shape="rect" id="node8" href="tables/cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="606,2531,846,2648">
+<area shape="rect" id="node10" href="tables/cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="600,2665,852,2783">
+<area shape="rect" id="node11" href="tables/cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="614,2800,838,2947">
+<area shape="rect" id="node12" href="tables/cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="569,2964,883,3081">
+<area shape="rect" id="node13" href="tables/cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="591,3099,861,3275">
+<area shape="rect" id="node14" href="tables/cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="606,3292,846,3409">
+<area shape="rect" id="node15" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="576,3427,876,3573">
+<area shape="rect" id="node16" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="563,3591,889,3825">
+<area shape="rect" id="node17" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="647,6396,805,6513">
+<area shape="rect" id="node18" href="tables/cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="962,5847,1261,6052">
+<area shape="rect" id="node36" href="tables/prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="576,6009,876,6185">
+<area shape="rect" id="node48" href="tables/prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="233,5952,472,6099">
+<area shape="rect" id="node19" href="tables/cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="617,3843,835,3989">
+<area shape="rect" id="node20" href="tables/cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="541,4007,911,4153">
+<area shape="rect" id="node21" href="tables/cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="601,4171,851,4288">
+<area shape="rect" id="node23" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="973,6976,1249,7181">
+<area shape="rect" id="node24" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="587,4305,865,4481">
+<area shape="rect" id="node25" href="tables/cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="599,4499,853,4616">
+<area shape="rect" id="node26" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="977,6396,1245,6572">
+<area shape="rect" id="node27" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="580,4633,872,4780">
+<area shape="rect" id="node28" href="tables/cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="600,4797,852,4915">
+<area shape="rect" id="node29" href="tables/usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="612,4932,840,5079">
+<area shape="rect" id="node30" href="tables/quiz_pregunta_opcion_etiqueta.html" target="_top" title="quiz_pregunta_opcion_etiqueta" alt="" coords="955,6069,1268,6216">
+<area shape="rect" id="node31" href="tables/cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="609,5096,843,5213">
+<area shape="rect" id="node32" href="tables/cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="583,5231,869,5348">
+<area shape="rect" id="node33" href="tables/cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="603,5365,849,5541">
+<area shape="rect" id="node34" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="582,5559,870,5735">
+<area shape="rect" id="node37" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="597,6203,855,6379">
+<area shape="rect" id="node38" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="608,5752,844,5899">
+<area shape="rect" id="node39" href="tables/cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="607,363,845,480">
+<area shape="rect" id="node40" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="965,6589,1257,6765">
+<area shape="rect" id="node41" href="tables/quiz_categoria_etiqueta.html" target="_top" title="quiz_categoria_etiqueta" alt="" coords="599,199,853,345">
+<area shape="rect" id="node42" href="tables/cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="600,497,852,615">
+<area shape="rect" id="node44" href="tables/cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="577,668,875,785">
+<area shape="rect" id="node45" href="tables/cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="606,803,846,949">
+<area shape="rect" id="node46" href="tables/cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="571,967,881,1113">
+<area shape="rect" id="node47" href="tables/cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="636,1131,816,1248">
+<area shape="rect" id="node49" href="tables/cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="575,1265,877,1383">
+<area shape="rect" id="node50" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="581,1400,871,1576">
+<area shape="rect" id="node51" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="592,1593,860,1887">
+<area shape="rect" id="node52" href="tables/log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="556,1904,896,2051">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="980,15959,1243,16345">
+<area shape="rect" id="node22" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="617,16219,835,16752">
+<area shape="rect" id="node2" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="617,15261,835,16029">
+<area shape="rect" id="node35" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="249,14945,456,15391">
+<area shape="rect" id="node3" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="599,4772,853,5393">
+<area shape="rect" id="node43" href="tables/cliente.html" target="_top" title="cliente" alt="" coords="208,6876,497,7761">
+<area shape="rect" id="node4" href="tables/cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="591,5411,861,5651">
+<area shape="rect" id="node5" href="tables/cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="549,5668,903,6025">
+<area shape="rect" id="node6" href="tables/cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="580,5,872,275">
+<area shape="rect" id="node7" href="tables/prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="5,14076,164,14345">
+<area shape="rect" id="node9" href="tables/prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="236,321,469,649">
+<area shape="rect" id="node8" href="tables/cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="606,6043,846,6165">
+<area shape="rect" id="node10" href="tables/cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="600,6183,852,6716">
+<area shape="rect" id="node11" href="tables/cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="614,6733,838,6973">
+<area shape="rect" id="node12" href="tables/cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="569,6991,883,7172">
+<area shape="rect" id="node13" href="tables/cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="591,7189,861,7400">
+<area shape="rect" id="node14" href="tables/cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="606,7417,846,7892">
+<area shape="rect" id="node15" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="576,7909,876,8149">
+<area shape="rect" id="node16" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="563,8167,889,8583">
+<area shape="rect" id="node17" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="647,15033,805,15244">
+<area shape="rect" id="node18" href="tables/cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="962,14047,1261,14375">
+<area shape="rect" id="node36" href="tables/prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="576,14284,876,14553">
+<area shape="rect" id="node48" href="tables/prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="233,14152,472,14421">
+<area shape="rect" id="node19" href="tables/cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="617,8600,835,9280">
+<area shape="rect" id="node20" href="tables/cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="541,9297,911,9713">
+<area shape="rect" id="node21" href="tables/cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="601,9731,851,9941">
+<area shape="rect" id="node23" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="973,16363,1249,16691">
+<area shape="rect" id="node24" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="587,9959,865,10345">
+<area shape="rect" id="node25" href="tables/cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="599,10363,853,11072">
+<area shape="rect" id="node26" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="977,15033,1245,15244">
+<area shape="rect" id="node27" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="580,11089,872,11359">
+<area shape="rect" id="node28" href="tables/cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="600,11376,852,11557">
+<area shape="rect" id="node29" href="tables/usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="612,11575,840,12137">
+<area shape="rect" id="node30" href="tables/quiz_pregunta_opcion_etiqueta.html" target="_top" title="quiz_pregunta_opcion_etiqueta" alt="" coords="955,14392,1268,14632">
+<area shape="rect" id="node31" href="tables/cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="609,12155,843,12424">
+<area shape="rect" id="node32" href="tables/cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="583,12441,869,12799">
+<area shape="rect" id="node33" href="tables/cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="603,12816,849,13173">
+<area shape="rect" id="node34" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="582,13191,870,13460">
+<area shape="rect" id="node37" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="597,14571,855,15016">
+<area shape="rect" id="node38" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="608,13477,844,14099">
+<area shape="rect" id="node39" href="tables/cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="607,549,845,760">
+<area shape="rect" id="node40" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="965,15261,1257,15883">
+<area shape="rect" id="node41" href="tables/quiz_categoria_etiqueta.html" target="_top" title="quiz_categoria_etiqueta" alt="" coords="599,292,853,532">
+<area shape="rect" id="node42" href="tables/cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="600,777,852,1164">
+<area shape="rect" id="node44" href="tables/cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="577,1217,875,1575">
+<area shape="rect" id="node45" href="tables/cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="606,1592,846,2067">
+<area shape="rect" id="node46" href="tables/cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="571,2084,881,2412">
+<area shape="rect" id="node47" href="tables/cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="636,2429,816,2875">
+<area shape="rect" id="node49" href="tables/cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="575,2892,877,3513">
+<area shape="rect" id="node50" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="581,3531,871,3888">
+<area shape="rect" id="node51" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="592,3905,860,4527">
+<area shape="rect" id="node52" href="tables/log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="556,4544,896,4755">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/prefs_quiz_avatars.html" target="_top" title="prefs_quiz_avatars" alt="" coords="333,5,550,152">
+<area shape="rect" id="node77" href="tables/usuario.html" target="_top" title="usuario" alt="" coords="5,1175,189,1292">
+<area shape="rect" id="node2" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="1856,913,2119,1089">
+<area shape="rect" id="node37" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="1490,765,1707,971">
+<area shape="rect" id="node3" href="tables/lk_canales.html" target="_top" title="lk_canales" alt="" coords="2300,635,2459,752">
+<area shape="rect" id="node4" href="tables/utilidades_banners_publicitarios.html" target="_top" title="utilidades_banners_publicitarios" alt="" coords="280,205,603,352">
+<area shape="rect" id="node5" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="737,1148,955,1412">
+<area shape="rect" id="node55" href="tables/tienda_catalogo.html" target="_top" title="tienda_catalogo" alt="" coords="339,1333,544,1539">
+<area shape="rect" id="node56" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="338,1765,545,1912">
+<area shape="rect" id="node59" href="tables/tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="341,1556,541,1703">
+<area shape="rect" id="node6" href="tables/historial_import_productos.html" target="_top" title="historial_import_productos" alt="" coords="301,405,582,552">
+<area shape="rect" id="node7" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="2252,4357,2507,4504">
+<area shape="rect" id="node61" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1869,4309,2105,4456">
+<area shape="rect" id="node66" href="tables/cliente.html" target="_top" title="cliente" alt="" coords="1454,3704,1743,3821">
+<area shape="rect" id="node8" href="tables/cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="1852,5143,2123,5260">
+<area shape="rect" id="node9" href="tables/tienda_productos_codigos_virtua_1aa049db.html" target="_top" title="tienda_productos_codigos_virtuales_errores" alt="" coords="233,569,649,716">
+<area shape="rect" id="node10" href="tables/cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="1811,1873,2164,2020">
+<area shape="rect" id="node11" href="tables/cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="1841,5635,2133,5811">
+<area shape="rect" id="node13" href="tables/prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="1139,5940,1298,6057">
+<area shape="rect" id="node16" href="tables/prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="1482,5816,1715,5963">
+<area shape="rect" id="node12" href="tables/historial_codigos_virtuales.html" target="_top" title="historial_codigos_virtuales" alt="" coords="301,733,581,880">
+<area shape="rect" id="node14" href="tables/cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="1867,2037,2107,2155">
+<area shape="rect" id="node15" href="tables/personal_access_tokens.html" target="_top" title="personal_access_tokens" alt="" coords="2248,412,2511,617">
+<area shape="rect" id="node17" href="tables/gamificacion_cofre.html" target="_top" title="gamificacion_cofre" alt="" coords="1477,6016,1720,6133">
+<area shape="rect" id="node18" href="tables/gamificacion_socio_bolsa_cofre.html" target="_top" title="gamificacion_socio_bolsa_cofre" alt="" coords="1439,6387,1759,6533">
+<area shape="rect" id="node51" href="tables/gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="1108,6497,1329,6615">
+<area shape="rect" id="node19" href="tables/cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="1861,2172,2113,2289">
+<area shape="rect" id="node20" href="tables/cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="1875,2307,2099,2453">
+<area shape="rect" id="node21" href="tables/app_movil_config_secuencia_bienvenida.html" target="_top" title="app_movil_config_secuencia_bienvenida" alt="" coords="247,897,635,1044">
+<area shape="rect" id="node22" href="tables/cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="1831,2471,2144,2588">
+<area shape="rect" id="node23" href="tables/historial_codigos_premios.html" target="_top" title="historial_codigos_premios" alt="" coords="1849,6972,2125,7148">
+<area shape="rect" id="node31" href="tables/gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="1482,6751,1715,6897">
+<area shape="rect" id="node24" href="tables/cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="1853,1572,2122,1748">
+<area shape="rect" id="node25" href="tables/cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="1867,2605,2107,2723">
+<area shape="rect" id="node26" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="1837,5277,2137,5424">
+<area shape="rect" id="node38" href="tables/gamificacion_sorteo.html" target="_top" title="gamificacion_sorteo" alt="" coords="1485,5373,1713,5491">
+<area shape="rect" id="node27" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="2216,805,2543,1040">
+<area shape="rect" id="node28" href="tables/app_movil_config_iniciar_sesion.html" target="_top" title="app_movil_config_iniciar_sesion" alt="" coords="279,1097,603,1244">
+<area shape="rect" id="node29" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="767,1471,925,1588">
+<area shape="rect" id="node30" href="tables/cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="2230,5964,2529,6169">
+<area shape="rect" id="node58" href="tables/prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="1837,6257,2137,6433">
+<area shape="rect" id="node73" href="tables/prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="1479,6187,1718,6333">
+<area shape="rect" id="node32" href="tables/cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="1879,2740,2096,2887">
+<area shape="rect" id="node33" href="tables/gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="1483,6551,1714,6697">
+<area shape="rect" id="node34" href="tables/gamificacion_premio_codigo_stock.html" target="_top" title="gamificacion_premio_codigo_stock" alt="" coords="1815,6808,2160,6955">
+<area shape="rect" id="node35" href="tables/cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="1803,2904,2172,3051">
+<area shape="rect" id="node36" href="tables/cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="1862,3068,2113,3185">
+<area shape="rect" id="node63" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="1073,571,1365,747">
+<area shape="rect" id="node39" href="tables/tienda_productos_codigos_virtuales.html" target="_top" title="tienda_productos_codigos_virtuales" alt="" coords="1043,1179,1395,1325">
+<area shape="rect" id="node40" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="1849,547,2125,752">
+<area shape="rect" id="node41" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="1848,6028,2127,6204">
+<area shape="rect" id="node42" href="tables/cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="1860,3203,2115,3320">
+<area shape="rect" id="node43" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="1085,1501,1353,1677">
+<area shape="rect" id="node44" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="1841,6644,2133,6791">
+<area shape="rect" id="node45" href="tables/cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="1861,3337,2113,3455">
+<area shape="rect" id="node46" href="tables/usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="1873,3472,2101,3619">
+<area shape="rect" id="node47" href="tables/quiz_pregunta_opcion_etiqueta.html" target="_top" title="quiz_pregunta_opcion_etiqueta" alt="" coords="2223,6228,2536,6375">
+<area shape="rect" id="node48" href="tables/cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="1871,3636,2104,3753">
+<area shape="rect" id="node49" href="tables/lk_notificaciones.html" target="_top" title="lk_notificaciones" alt="" coords="2665,605,2868,752">
+<area shape="rect" id="node50" href="tables/cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="1844,3771,2131,3888">
+<area shape="rect" id="node52" href="tables/cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="1864,1143,2111,1319">
+<area shape="rect" id="node53" href="tables/log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="2587,911,2947,1116">
+<area shape="rect" id="node54" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="1843,5441,2131,5617">
+<area shape="rect" id="node57" href="tables/cliente_tarjeta_billetera_referencia.html" target="_top" title="cliente_tarjeta_billetera_referencia" alt="" coords="2599,412,2935,529">
+<area shape="rect" id="node60" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="717,1873,975,2049">
+<area shape="rect" id="node62" href="tables/cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="1869,3905,2106,4023">
+<area shape="rect" id="node64" href="tables/quiz_categoria_etiqueta.html" target="_top" title="quiz_categoria_etiqueta" alt="" coords="1860,5828,2115,5975">
+<area shape="rect" id="node65" href="tables/cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="1861,4040,2113,4157">
+<area shape="rect" id="node67" href="tables/cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="1838,4175,2137,4292">
+<area shape="rect" id="node68" href="tables/app_movil_config_afiliacion.html" target="_top" title="app_movil_config_afiliacion" alt="" coords="298,6951,585,7097">
+<area shape="rect" id="node69" href="tables/cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="1867,4509,2107,4656">
+<area shape="rect" id="node70" href="tables/tienda_banner.html" target="_top" title="tienda_banner" alt="" coords="344,7115,539,7261">
+<area shape="rect" id="node71" href="tables/cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="1832,4709,2143,4856">
+<area shape="rect" id="node72" href="tables/cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="1897,4873,2077,4991">
+<area shape="rect" id="node74" href="tables/cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="1836,5008,2139,5125">
+<area shape="rect" id="node75" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="1842,6451,2133,6627">
+<area shape="rect" id="node76" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="2245,1240,2513,1533">
+<area shape="rect" id="node78" href="tables/log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="1817,1408,2157,1555">
+<area shape="rect" id="node79" href="tables/mv_tienda_categoria_jerarquia.html" target="_top" title="mv_tienda_categoria_jerarquia" alt="" coords="693,1605,999,1699">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/prefs_quiz_avatars.html" target="_top" title="prefs_quiz_avatars" alt="" coords="333,5,550,363">
+<area shape="rect" id="node77" href="tables/usuario.html" target="_top" title="usuario" alt="" coords="5,2896,189,3371">
+<area shape="rect" id="node2" href="tables/tienda_inventario_precio.html" target="_top" title="tienda_inventario_precio" alt="" coords="1856,2321,2119,2708">
+<area shape="rect" id="node37" href="tables/tienda_inventario.html" target="_top" title="tienda_inventario" alt="" coords="1490,2099,1707,2632">
+<area shape="rect" id="node3" href="tables/lk_canales.html" target="_top" title="lk_canales" alt="" coords="2300,1888,2459,2128">
+<area shape="rect" id="node4" href="tables/utilidades_banners_publicitarios.html" target="_top" title="utilidades_banners_publicitarios" alt="" coords="280,416,603,1037">
+<area shape="rect" id="node5" href="tables/tienda_producto.html" target="_top" title="tienda_producto" alt="" coords="737,2685,955,3453">
+<area shape="rect" id="node55" href="tables/tienda_catalogo.html" target="_top" title="tienda_catalogo" alt="" coords="339,3043,544,3664">
+<area shape="rect" id="node56" href="tables/tienda_proveedor.html" target="_top" title="tienda_proveedor" alt="" coords="338,4121,545,4567">
+<area shape="rect" id="node59" href="tables/tienda_categoria.html" target="_top" title="tienda_categoria" alt="" coords="341,3681,541,4068">
+<area shape="rect" id="node6" href="tables/historial_import_productos.html" target="_top" title="historial_import_productos" alt="" coords="301,1091,582,1360">
+<area shape="rect" id="node7" href="tables/cliente_direccion_envio.html" target="_top" title="cliente_direccion_envio" alt="" coords="2252,11141,2507,11763">
+<area shape="rect" id="node61" href="tables/cliente_ext_direccion.html" target="_top" title="cliente_ext_direccion" alt="" coords="1869,10856,2105,11477">
+<area shape="rect" id="node66" href="tables/cliente.html" target="_top" title="cliente" alt="" coords="1454,8868,1743,9753">
+<area shape="rect" id="node8" href="tables/cliente_registro_afiliacion.html" target="_top" title="cliente_registro_afiliacion" alt="" coords="1852,13013,2123,13253">
+<area shape="rect" id="node9" href="tables/tienda_productos_codigos_virtua_1aa049db.html" target="_top" title="tienda_productos_codigos_virtuales_errores" alt="" coords="233,1377,649,1647">
+<area shape="rect" id="node10" href="tables/cliente_producto_orden_transaccion.html" target="_top" title="cliente_producto_orden_transaccion" alt="" coords="1811,3819,2164,4176">
+<area shape="rect" id="node11" href="tables/cliente_prefs_quiz_categoria.html" target="_top" title="cliente_prefs_quiz_categoria" alt="" coords="1841,13271,2133,13540">
+<area shape="rect" id="node13" href="tables/prefs_quiz.html" target="_top" title="prefs_quiz" alt="" coords="1139,14245,1298,14515">
+<area shape="rect" id="node16" href="tables/prefs_quiz_categoria.html" target="_top" title="prefs_quiz_categoria" alt="" coords="1482,13529,1715,13857">
+<area shape="rect" id="node12" href="tables/historial_codigos_virtuales.html" target="_top" title="historial_codigos_virtuales" alt="" coords="301,1664,581,1992">
+<area shape="rect" id="node14" href="tables/cliente_notificaciones.html" target="_top" title="cliente_notificaciones" alt="" coords="1867,4193,2107,4316">
+<area shape="rect" id="node15" href="tables/personal_access_tokens.html" target="_top" title="personal_access_tokens" alt="" coords="2248,1425,2511,1753">
+<area shape="rect" id="node17" href="tables/gamificacion_cofre.html" target="_top" title="gamificacion_cofre" alt="" coords="1477,14321,1720,14649">
+<area shape="rect" id="node18" href="tables/gamificacion_socio_bolsa_cofre.html" target="_top" title="gamificacion_socio_bolsa_cofre" alt="" coords="1439,15025,1759,15295">
+<area shape="rect" id="node51" href="tables/gamificacion_socio.html" target="_top" title="gamificacion_socio" alt="" coords="1108,15329,1329,15569">
+<area shape="rect" id="node19" href="tables/cliente_puntos_compra.html" target="_top" title="cliente_puntos_compra" alt="" coords="1861,4333,2113,4867">
+<area shape="rect" id="node20" href="tables/cliente_ext_referido.html" target="_top" title="cliente_ext_referido" alt="" coords="1875,4884,2099,5124">
+<area shape="rect" id="node21" href="tables/app_movil_config_secuencia_bienvenida.html" target="_top" title="app_movil_config_secuencia_bienvenida" alt="" coords="247,2009,635,2513">
+<area shape="rect" id="node22" href="tables/cliente_historial_codigo_virtual.html" target="_top" title="cliente_historial_codigo_virtual" alt="" coords="1831,5141,2144,5323">
+<area shape="rect" id="node23" href="tables/historial_codigos_premios.html" target="_top" title="historial_codigos_premios" alt="" coords="1849,16257,2125,16556">
+<area shape="rect" id="node31" href="tables/gamificacion_premio.html" target="_top" title="gamificacion_premio" alt="" coords="1482,15811,1715,16432">
+<area shape="rect" id="node24" href="tables/cliente_producto_favorito.html" target="_top" title="cliente_producto_favorito" alt="" coords="1853,3255,2122,3465">
+<area shape="rect" id="node25" href="tables/cliente_soles_recarga.html" target="_top" title="cliente_soles_recarga" alt="" coords="1867,5340,2107,5815">
+<area shape="rect" id="node26" href="tables/gamificacion_sorteo_ganador.html" target="_top" title="gamificacion_sorteo_ganador" alt="" coords="1837,13557,2137,13797">
+<area shape="rect" id="node38" href="tables/gamificacion_sorteo.html" target="_top" title="gamificacion_sorteo" alt="" coords="1485,13875,1713,14232">
+<area shape="rect" id="node27" href="tables/cliente_producto_carrito_compra.html" target="_top" title="cliente_producto_carrito_compra" alt="" coords="2216,2187,2543,2603">
+<area shape="rect" id="node28" href="tables/app_movil_config_iniciar_sesion.html" target="_top" title="app_movil_config_iniciar_sesion" alt="" coords="279,2567,603,2953">
+<area shape="rect" id="node29" href="tables/lk_etiqueta.html" target="_top" title="lk_etiqueta" alt="" coords="767,3507,925,3717">
+<area shape="rect" id="node30" href="tables/cliente_prefs_quiz_preguntas.html" target="_top" title="cliente_prefs_quiz_preguntas" alt="" coords="2230,14375,2529,14703">
+<area shape="rect" id="node58" href="tables/prefs_quiz_preguntas_opcion.html" target="_top" title="prefs_quiz_preguntas_opcion" alt="" coords="1837,14835,2137,15104">
+<area shape="rect" id="node73" href="tables/prefs_quiz_preguntas.html" target="_top" title="prefs_quiz_preguntas" alt="" coords="1479,14703,1718,14972">
+<area shape="rect" id="node32" href="tables/cliente_pagos_tapi.html" target="_top" title="cliente_pagos_tapi" alt="" coords="1879,5832,2096,6512">
+<area shape="rect" id="node33" href="tables/gamificacion_mision.html" target="_top" title="gamificacion_mision" alt="" coords="1483,15312,1714,15757">
+<area shape="rect" id="node34" href="tables/gamificacion_premio_codigo_stock.html" target="_top" title="gamificacion_premio_codigo_stock" alt="" coords="1815,15907,2160,16176">
+<area shape="rect" id="node35" href="tables/cliente_comprobantes_compra_fisicos.html" target="_top" title="cliente_comprobantes_compra_fisicos" alt="" coords="1803,6529,2172,6945">
+<area shape="rect" id="node36" href="tables/cliente_tarjeta_billetera.html" target="_top" title="cliente_tarjeta_billetera" alt="" coords="1862,6963,2113,7173">
+<area shape="rect" id="node63" href="tables/tienda_producto_multimedia.html" target="_top" title="tienda_producto_multimedia" alt="" coords="1073,2011,1365,2632">
+<area shape="rect" id="node39" href="tables/tienda_productos_codigos_virtuales.html" target="_top" title="tienda_productos_codigos_virtuales" alt="" coords="1043,2797,1395,3125">
+<area shape="rect" id="node40" href="tables/tienda_inventario_variante.html" target="_top" title="tienda_inventario_variante" alt="" coords="1849,1664,2125,1992">
+<area shape="rect" id="node41" href="tables/gamificacion_cliente_cofre.html" target="_top" title="gamificacion_cliente_cofre" alt="" coords="1848,14395,2127,14781">
+<area shape="rect" id="node42" href="tables/cliente_producto_orden.html" target="_top" title="cliente_producto_orden" alt="" coords="1860,7191,2115,7900">
+<area shape="rect" id="node43" href="tables/tienda_producto_etiqueta.html" target="_top" title="tienda_producto_etiqueta" alt="" coords="1085,3507,1353,3717">
+<area shape="rect" id="node44" href="tables/gamificacion_cliente_premio.html" target="_top" title="gamificacion_cliente_premio" alt="" coords="1841,15620,2133,15889">
+<area shape="rect" id="node45" href="tables/cliente_estado_registro.html" target="_top" title="cliente_estado_registro" alt="" coords="1861,7917,2113,8099">
+<area shape="rect" id="node46" href="tables/usuario_contactame.html" target="_top" title="usuario_contactame" alt="" coords="1873,8116,2101,8679">
+<area shape="rect" id="node47" href="tables/quiz_pregunta_opcion_etiqueta.html" target="_top" title="quiz_pregunta_opcion_etiqueta" alt="" coords="2223,14805,2536,15045">
+<area shape="rect" id="node48" href="tables/cliente_otp_generico.html" target="_top" title="cliente_otp_generico" alt="" coords="1871,8696,2104,8965">
+<area shape="rect" id="node49" href="tables/lk_notificaciones.html" target="_top" title="lk_notificaciones" alt="" coords="2665,1712,2868,2011">
+<area shape="rect" id="node50" href="tables/cliente_otp_transferir_soles.html" target="_top" title="cliente_otp_transferir_soles" alt="" coords="1844,8983,2131,9340">
+<area shape="rect" id="node52" href="tables/cliente_producto_vista.html" target="_top" title="cliente_producto_vista" alt="" coords="1864,2797,2111,3155">
+<area shape="rect" id="node53" href="tables/log_cliente_producto_carrito_compra.html" target="_top" title="log_cliente_producto_carrito_compra" alt="" coords="2587,2325,2947,2771">
+<area shape="rect" id="node54" href="tables/gamificacion_sorteo_cliente.html" target="_top" title="gamificacion_sorteo_cliente" alt="" coords="1843,14072,2131,14341">
+<area shape="rect" id="node57" href="tables/cliente_tarjeta_billetera_referencia.html" target="_top" title="cliente_tarjeta_billetera_referencia" alt="" coords="2599,1425,2935,1695">
+<area shape="rect" id="node60" href="tables/tienda_proveedor_maps.html" target="_top" title="tienda_proveedor_maps" alt="" coords="717,4204,975,4649">
+<area shape="rect" id="node62" href="tables/cliente_tarjeta_bonus.html" target="_top" title="cliente_tarjeta_bonus" alt="" coords="1869,9357,2106,9568">
+<area shape="rect" id="node64" href="tables/quiz_categoria_etiqueta.html" target="_top" title="quiz_categoria_etiqueta" alt="" coords="1860,13815,2115,14055">
+<area shape="rect" id="node65" href="tables/cliente_geolocalizacion.html" target="_top" title="cliente_geolocalizacion" alt="" coords="1861,9585,2113,9972">
+<area shape="rect" id="node67" href="tables/cliente_otp_transferir_puntos.html" target="_top" title="cliente_otp_transferir_puntos" alt="" coords="1838,9989,2137,10347">
+<area shape="rect" id="node68" href="tables/app_movil_config_afiliacion.html" target="_top" title="app_movil_config_afiliacion" alt="" coords="298,16485,585,16931">
+<area shape="rect" id="node69" href="tables/cliente_soles_compra.html" target="_top" title="cliente_soles_compra" alt="" coords="1867,10364,2107,10839">
+<area shape="rect" id="node70" href="tables/tienda_banner.html" target="_top" title="tienda_banner" alt="" coords="344,16948,539,17569">
+<area shape="rect" id="node71" href="tables/cliente_ext_verificacion.html" target="_top" title="cliente_ext_verificacion" alt="" coords="1832,11567,2143,11895">
+<area shape="rect" id="node72" href="tables/cliente_tarjeta.html" target="_top" title="cliente_tarjeta" alt="" coords="1897,11912,2077,12357">
+<area shape="rect" id="node74" href="tables/cliente_informacion_adicional.html" target="_top" title="cliente_informacion_adicional" alt="" coords="1836,12375,2139,12996">
+<area shape="rect" id="node75" href="tables/gamificacion_cliente_mision.html" target="_top" title="gamificacion_cliente_mision" alt="" coords="1842,15245,2133,15603">
+<area shape="rect" id="node76" href="tables/cliente_producto_compra.html" target="_top" title="cliente_producto_compra" alt="" coords="2245,3068,2513,3689">
+<area shape="rect" id="node78" href="tables/log_usuario_interaccion_compartir.html" target="_top" title="log_usuario_interaccion_compartir" alt="" coords="1817,3483,2157,3693">
+<area shape="rect" id="node79" href="tables/mv_tienda_categoria_jerarquia.html" target="_top" title="mv_tienda_categoria_jerarquia" alt="" coords="693,3735,999,4068">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

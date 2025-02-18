@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="app_bonus" schema="public" type="PostgreSQL - 14.9">
+   <sequences>
+      <sequence increment="1" name="cliente_comprobantes_compra_fisicos_id_comprobante_seq" startValue="1"/>
+      <sequence increment="1" name="cliente_notificaciones_id_cliente_seq" startValue="1"/>
+      <sequence increment="1" name="cliente_public_solicitud_empleo_id_solicitud_seq" startValue="1"/>
+      <sequence increment="1" name="failed_jobs_id_seq" startValue="1"/>
+      <sequence increment="1" name="migrations_id_seq" startValue="1"/>
+      <sequence increment="1" name="tienda_category_id_categoria_seq" startValue="1"/>
+      <sequence increment="1" name="users_id_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table catalog="app_bonus" name="banners" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="0" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="banners_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="cliente_comprobantes_compra_fisicos" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('cliente_comprobantes_compra_fisicos_id_comprobante_seq'::regclass)" digits="0" id="0" name="id_comprobante" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fecha_transaccion" nullable="false" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="2" name="monto" nullable="false" remarks="" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="numero_boleta" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="url_imagen" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="path_imagen" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="'Pendiente de Validación'::character varying" digits="0" id="6" name="estado_boleta" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="explicacion" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="8" name="creado_el" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="6" id="9" name="actualizado_el" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="id_comprobante" sequenceNumberInPK="1"/>
+         <index name="cliente_comprobantes_compra_fisicos_pkey" unique="true">
+            <column ascending="true" name="id_comprobante"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="cliente_notificaciones" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('cliente_notificaciones_id_cliente_seq'::regclass)" digits="0" id="0" name="id_cliente" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="quiere_notificaciones" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="id_cliente" sequenceNumberInPK="1"/>
+         <index name="cliente_notificaciones_pkey" unique="true">
+            <column ascending="true" name="id_cliente"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="cliente_public_solicitud_empleo" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('cliente_public_solicitud_empleo_id_solicitud_seq'::regclass)" digits="0" id="0" name="id_solicitud" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombres" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="apellido_paterno" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="apellido_materno" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="tipo_doc" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="numero_doc" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="direccion" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="id_departamento" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="id_provincia" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="id_distrito" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="email" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="telefono" nullable="false" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="area_postulacion" nullable="false" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="acepta_politica_privacidad" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <primaryKey column="id_solicitud" sequenceNumberInPK="1"/>
+         <index name="cliente_public_solicitud_empleo_pkey" unique="true">
+            <column ascending="true" name="id_solicitud"/>
+         </index>
+         <checkConstraint constraint="(((area_postulacion)::text = ANY ((ARRAY['Módulo de canje'::character varying, 'Servicio al cliente'::character varying])::text[])))" name="cliente_public_solicitud_empleo_area_postulacion_check"/>
+      </table>
+      <table catalog="app_bonus" name="failed_jobs" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('failed_jobs_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="connection" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="queue" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="payload" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="exception" nullable="false" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="CURRENT_TIMESTAMP" digits="0" id="5" name="failed_at" nullable="false" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="failed_jobs_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="login_attempts" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="user_id" nullable="false" remarks="" size="256" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="attempts" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="user_id" sequenceNumberInPK="1"/>
+         <index name="login_attempts_pkey" unique="true">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="migrations" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('migrations_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="migration" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="batch" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="migrations_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="mv_tienda_categoria_jerarquia" numRows="0" remarks="" schema="public" type="VIEW" viewSql=" WITH RECURSIVE arbol_categorias AS (&#10;         SELECT tienda_categoria.id_categoria,&#10;            tienda_categoria.nombre,&#10;            tienda_categoria.descripcion,&#10;            tienda_categoria.id_categoria_padre,&#10;            tienda_categoria.ruta,&#10;            1 AS profundidad,&#10;            ((&quot;left&quot;((tienda_categoria.nombre)::text, 1) || ':'::text) || lpad(((tienda_categoria.id_categoria)::character varying)::text, 4, '0'::text)) AS ruta_orden&#10;           FROM aplicacion.tienda_categoria&#10;          WHERE (tienda_categoria.id_categoria_padre IS NULL)&#10;        UNION ALL&#10;         SELECT c.id_categoria,&#10;            c.nombre,&#10;            c.descripcion,&#10;            c.id_categoria_padre,&#10;            c.ruta,&#10;            (ac.profundidad + 1),&#10;            ((((ac.ruta_orden || ':'::text) || &quot;left&quot;((c.nombre)::text, 1)) || ':'::text) || lpad(((c.id_categoria)::character varying)::text, 4, '0'::text)) AS ruta_orden&#10;           FROM (aplicacion.tienda_categoria c&#10;             JOIN arbol_categorias ac ON ((c.id_categoria_padre = ac.id_categoria)))&#10;        )&#10; SELECT arbol_categorias.id_categoria,&#10;    arbol_categorias.nombre,&#10;    arbol_categorias.descripcion,&#10;    arbol_categorias.id_categoria_padre,&#10;    arbol_categorias.ruta,&#10;    arbol_categorias.profundidad,&#10;    arbol_categorias.ruta_orden&#10;   FROM arbol_categorias&#10;  ORDER BY arbol_categorias.ruta_orden; WITH RECURSIVE arbol_categorias AS (&#10;         SELECT tienda_categoria.id_categoria,&#10;            tienda_categoria.nombre,&#10;            tienda_categoria.descripcion,&#10;            tienda_categoria.id_categoria_padre,&#10;            tienda_categoria.ruta,&#10;            1 AS profundidad,&#10;            ((&quot;left&quot;((tienda_categoria.nombre)::text, 1) || ':'::text) || lpad(((tienda_categoria.id_categoria)::character varying)::text, 4, '0'::text)) AS ruta_orden,&#10;            tienda_categoria.media_url,&#10;            tienda_categoria.movil_url,&#10;            tienda_categoria.creado_el&#10;           FROM aplicacion.tienda_categoria&#10;          WHERE (tienda_categoria.id_categoria_padre IS NULL)&#10;        UNION ALL&#10;         SELECT c.id_categoria,&#10;            c.nombre,&#10;            c.descripcion,&#10;            c.id_categoria_padre,&#10;            c.ruta,&#10;            (ac.profundidad + 1),&#10;            ((((ac.ruta_orden || ':'::text) || &quot;left&quot;((c.nombre)::text, 1)) || ':'::text) || lpad(((c.id_categoria)::character varying)::text, 4, '0'::text)) AS ruta_orden,&#10;            c.media_url,&#10;            c.movil_url,&#10;            c.creado_el&#10;           FROM (aplicacion.tienda_categoria c&#10;             JOIN arbol_categorias ac ON ((c.id_categoria_padre = ac.id_categoria)))&#10;        )&#10; SELECT arbol_categorias.id_categoria,&#10;    arbol_categorias.nombre,&#10;    arbol_categorias.descripcion,&#10;    arbol_categorias.id_categoria_padre,&#10;    arbol_categorias.ruta,&#10;    arbol_categorias.profundidad,&#10;    arbol_categorias.ruta_orden,&#10;    arbol_categorias.media_url,&#10;    arbol_categorias.movil_url,&#10;    arbol_categorias.creado_el&#10;   FROM arbol_categorias&#10;  ORDER BY arbol_categorias.ruta_orden;">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_categoria" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="app_bonus" column="id_categoria" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="public" table="tienda_category"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="descripcion" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="id_categoria_padre" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ruta" nullable="true" remarks="" size="10" type="_int4" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="profundidad" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ruta_orden" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      </table>
+      <table catalog="app_bonus" name="password_resets" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="email" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="token" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="created_at" nullable="true" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <index name="password_resets_email_index" unique="false">
+            <column ascending="true" name="email"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="table_1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="28" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="column_2" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="table_1_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="tienda_category" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('tienda_category_id_categoria_seq'::regclass)" digits="0" id="0" name="id_categoria" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="app_bonus" column="id_categoria" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="public" table="mv_tienda_categoria_jerarquia"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="nombre" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="descripcion" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="id_categoria_padre" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ruta" nullable="true" remarks="" size="10" type="_int4" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="5" name="creado_el" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="6" name="actualizado_el" nullable="true" remarks="" size="35" type="timestamptz" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="id_usuario" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="estado" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <primaryKey column="id_categoria" sequenceNumberInPK="1"/>
+         <index name="tienda_category_pkey" unique="true">
+            <column ascending="true" name="id_categoria"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="users" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="email" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="email_verified_at" nullable="true" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="password" nullable="false" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="remember_token" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="created_at" nullable="true" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="updated_at" nullable="true" remarks="" size="22" type="timestamp" typeCode="93"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="users_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="users_email_unique" unique="true">
+            <column ascending="true" name="email"/>
+         </index>
+      </table>
+   </tables>
+</database>

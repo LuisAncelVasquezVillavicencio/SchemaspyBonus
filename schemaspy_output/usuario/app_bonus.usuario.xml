@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="app_bonus" schema="usuario" type="PostgreSQL - 14.9">
+   <sequences>
+      <sequence increment="1" name="rol_id_rol_seq" startValue="1"/>
+      <sequence increment="1" name="usuario_id_usuario_seq" startValue="1"/>
+   </sequences>
+   <tables>
+      <table catalog="app_bonus" name="rol" remarks="" schema="usuario" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('usuario.rol_id_rol_seq'::regclass)" digits="0" id="0" name="id_rol" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="app_bonus" column="id_rol" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="usuario" table="usuario_rol"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="titulo" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="descripcion" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="3" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="4" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="id_rol" sequenceNumberInPK="1"/>
+         <index name="rol_pkey" unique="true">
+            <column ascending="true" name="id_rol"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="usuario" remarks="" schema="usuario" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('usuario.usuario_id_usuario_seq'::regclass)" digits="0" id="0" name="id_usuario" nullable="false" remarks="" size="10" type="serial" typeCode="4">
+            <child catalog="app_bonus" column="id_usuario" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="usuario" table="usuario_rol"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="correo" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="nombre" nullable="true" remarks="" size="90" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="apellido" nullable="true" remarks="" size="90" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="fecha_nacimiento" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="celular" nullable="true" remarks="" size="15" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="estado" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="7" name="ultimo_acceso" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="contraseña" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="email_verified_at" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="remember_token" nullable="true" remarks="" size="45" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="11" name="created_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="6" id="12" name="updated_at" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <primaryKey column="id_usuario" sequenceNumberInPK="1"/>
+         <index name="usuario_pkey" unique="true">
+            <column ascending="true" name="id_usuario"/>
+         </index>
+      </table>
+      <table catalog="app_bonus" name="usuario_rol" remarks="" schema="usuario" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id_rol" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="app_bonus" column="id_rol" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="usuario" table="rol"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="id_usuario" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <parent catalog="app_bonus" column="id_usuario" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" schema="usuario" table="usuario"/>
+         </column>
+      </table>
+   </tables>
+</database>
